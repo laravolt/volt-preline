@@ -1,15 +1,26 @@
 {
   "name": "velix-preline",
-  "version": "0.0.1",
-  "description": "Preline UI (free tier, MIT) components for Remix 3 UI — same component API as velix-catalyst, interactions via remix/ui primitives (no preline.js).",
+  "version": "0.1.0",
+  "description": "Preline UI (free tier, MIT) components for Remix 3 UI \u2014 same component API as velix-catalyst, interactions via remix/ui primitives (no preline.js).",
   "license": "MIT",
   "type": "module",
-  "files": ["dist", "src", "LICENSE", "README.md", "CONVENTIONS.md"],
+  "files": [
+    "dist",
+    "src",
+    "LICENSE",
+    "README.md",
+    "CONVENTIONS.md"
+  ],
   "exports": {
-    ".": { "types": "./dist/index.d.ts", "default": "./dist/index.js" },
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
     "./styles.css": "./src/styles.css",
-    "./theme.css": "./src/theme.css",
-    "./*": { "types": "./dist/*.d.ts", "default": "./dist/*.js" }
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "default": "./dist/*.js"
+    }
   },
   "scripts": {
     "build": "rm -rf dist && tsc -p tsconfig.build.json",
@@ -29,9 +40,11 @@
     "@tailwindcss/cli": "4.2.2",
     "@tailwindcss/forms": "0.5.10",
     "@types/node": "25.5.0",
-    "preline": "5.0.0",
     "remix": "3.0.0-rc.1",
     "tailwindcss": "4.2.2",
     "typescript": "6.0.2"
+  },
+  "dependencies": {
+    "preline": "5.0.0"
   }
 }

@@ -11,7 +11,7 @@ Apps switch tiers by changing the import package only.
   Tailwind class strings, layout tricks or design details** — that code is licensed; only the
   behavior/structure may be reused. If in doubt, rewrite.
 - Visual reference: Preline docs (`https://preline.co/docs/<component>.html`, fetch with WebFetch
-  and read the Tailwind-utility variant) and Preline's semantic tokens in `src/theme.css`
+  and read the Tailwind-utility variant) and Preline's semantic tokens in `node_modules/preline/theme.css`
   (`bg-background`, `text-foreground`, `bg-card border-card-line`, `bg-layer border-layer-line
   text-layer-foreground`, `bg-primary text-primary-foreground hover:bg-primary-hover`,
   `bg-secondary`, `bg-destructive`, `bg-muted text-muted-foreground`, `bg-dropdown
