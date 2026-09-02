@@ -20,5 +20,10 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-Preline UI (https://preline.co) is licensed under MIT by Htmlstream; its theme tokens
-(theme.css, variants.css) are redistributed here under that license.
+---
+
+Attribution: this package integrates Preline UI (https://preline.co, https://github.com/htmlstreamofficial/preline),
+copyright Preline Labs Ltd., released under the MIT License and the Preline UI Fair Use License
+(https://preline.co/docs/license.html). Its theme tokens and variants are consumed from the `preline`
+npm package. volt-preline is an integration of Preline UI's design language with Remix UI and is not
+intended to compete with Preline UI. Preline Pro content is not included.
