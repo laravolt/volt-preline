@@ -18,8 +18,9 @@ Interactions (dropdown, listbox, combobox, dialog, drawers) are built on `remix/
 @import "velix-preline/styles.css";   /* variants + @tailwindcss/forms + theme tokens + .dark variant */
 @source "../../node_modules/velix-preline/dist";
 ```
-Add `"velix-preline"` to `assets.allowPackages` in `remix.json`. Toggle dark mode by adding the
-`dark` class to `<html>`.
+Add `"velix-preline"` to `assets.allowPackages` in `remix.json`. Dark mode: call `installDarkMode()` from `velix-preline/dark-mode` in your browser entry (it follows
+the OS setting or a saved choice via `setTheme()`, and survives Remix frame navigations), and inline
+`darkModeHeadScript()` in `<head>` to avoid a flash.
 
 ## Develop
 ```sh

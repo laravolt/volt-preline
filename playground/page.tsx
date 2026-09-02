@@ -1,5 +1,6 @@
 import type { Handle, RemixNode } from 'remix/ui'
 
+import { darkModeHeadScript } from '../src/dark-mode.ts'
 import { entryHref, entryPreloads } from './assets.ts'
 
 export function Document(handle: Handle<{ title: string; children?: RemixNode }>) {
@@ -11,7 +12,7 @@ export function Document(handle: Handle<{ title: string; children?: RemixNode }>
         <meta name="color-scheme" content="light dark" />
         <link rel="preconnect" href="https://rsms.me/" />
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-        <script>{"(function(){var r=document.documentElement;var m=matchMedia('(prefers-color-scheme: dark)');function a(){r.classList.toggle('dark',m.matches)}a();m.addEventListener('change',a)})()"}</script>
+        <script>{darkModeHeadScript()}</script>
         <title>{handle.props.title}</title>
         <link rel="stylesheet" href="/app.css" />
         {entryPreloads.map((href) => (
