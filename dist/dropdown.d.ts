@@ -1,7 +1,7 @@
 /**
  * `Dropdown` — Preline "Dropdown" styling on top of `remix/ui/menu/primitives` (no `preline.js`).
  *
- * API parity with `velix-catalyst/dropdown`: `Dropdown` (`label`, `onSelect(event)`), `DropdownButton`
+ * API parity with `volt-catalyst/dropdown`: `Dropdown` (`label`, `onSelect(event)`), `DropdownButton`
  * (`as`, defaults to `Button`), `DropdownMenu` (`anchor="bottom end"` strings), `DropdownItem` (`href`,
  * `name`, `value`, `label`, `searchValue`, `disabled`), `DropdownHeader`, `DropdownSection`,
  * `DropdownHeading`, `DropdownDivider`, `DropdownLabel`, `DropdownDescription`, `DropdownShortcut`.

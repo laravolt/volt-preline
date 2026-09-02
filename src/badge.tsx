@@ -1,5 +1,5 @@
 /**
- * Preline `Badge` / `BadgeButton` for Remix UI — API-compatible with `velix-catalyst/badge`.
+ * Preline `Badge` / `BadgeButton` for Remix UI — API-compatible with `volt-catalyst/badge`.
  *
  * API parity: same exports (`Badge`, `BadgeButton`, `badgeColors`, `BadgeColor`, `BadgeProps`,
  * `BadgeButtonProps`) and the same 18-color union. `BadgeButton` with `href` renders through

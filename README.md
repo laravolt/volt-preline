@@ -1,11 +1,11 @@
-# velix-preline
+# volt-preline
 
 [Preline UI](https://preline.co) (free tier, MIT) as **Remix 3 UI** components — the open
-counterpart of the private `velix-catalyst` package, with the **same component API**:
+counterpart of the private `volt-catalyst` package, with the **same component API**:
 
 ```tsx
-import { Button } from 'velix-preline/button'      // or 'velix-catalyst/button'
-import { Field, Label } from 'velix-preline/fieldset'
+import { Button } from 'volt-preline/button'      // or 'volt-catalyst/button'
+import { Field, Label } from 'volt-preline/fieldset'
 ```
 
 Interactions (dropdown, listbox, combobox, dialog, drawers) are built on `remix/ui` primitives;
@@ -15,10 +15,10 @@ Interactions (dropdown, listbox, combobox, dialog, drawers) are built on `remix/
 ```css
 /* app/styles/app.css */
 @import "tailwindcss";
-@import "velix-preline/styles.css";   /* variants + @tailwindcss/forms + theme tokens + .dark variant */
-@source "../../node_modules/velix-preline/dist";
+@import "volt-preline/styles.css";   /* variants + @tailwindcss/forms + theme tokens + .dark variant */
+@source "../../node_modules/volt-preline/dist";
 ```
-Add `"velix-preline"` to `assets.allowPackages` in `remix.json`. Dark mode: call `installDarkMode()` from `velix-preline/dark-mode` in your browser entry (it follows
+Add `"volt-preline"` to `assets.allowPackages` in `remix.json`. Dark mode: call `installDarkMode()` from `volt-preline/dark-mode` in your browser entry (it follows
 the OS setting or a saved choice via `setTheme()`, and survives Remix frame navigations), and inline
 `darkModeHeadScript()` in `<head>` to avoid a flash.
 

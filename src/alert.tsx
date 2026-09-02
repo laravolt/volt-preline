@@ -1,7 +1,7 @@
 /**
  * `Alert` — the compact confirmation variant of `Dialog` (`role="alertdialog"`), Preline "Modal" styling.
  *
- * API parity with `velix-catalyst/alert`: `Alert` (`open`, `onClose(false)`, `size` — default `md`,
+ * API parity with `volt-catalyst/alert`: `Alert` (`open`, `onClose(false)`, `size` — default `md`,
  * `className`), `AlertTitle`, `AlertDescription`, `AlertBody`, `AlertActions`; same context value shape
  * as `Dialog` (`{ titleId, descriptionId }`) and the same `aria-labelledby` / `aria-describedby` wiring.
  *

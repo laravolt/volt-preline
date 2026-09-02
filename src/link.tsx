@@ -1,5 +1,5 @@
 /**
- * `Link` for velix-preline (API parity with velix-catalyst `link.tsx`).
+ * `Link` for volt-preline (API parity with volt-catalyst `link.tsx`).
  *
  * A plain `<a href>`: same-origin anchors are progressively enhanced by Remix `run()`, so no `link()`
  * mixin is needed. Accepts both `className` and `class`; every other prop (including `mix`,

@@ -1,7 +1,7 @@
 {
-  "name": "velix-preline",
+  "name": "volt-preline",
   "version": "0.1.0",
-  "description": "Preline UI (free tier, MIT) components for Remix 3 UI \u2014 same component API as velix-catalyst, interactions via remix/ui primitives (no preline.js).",
+  "description": "Preline UI (free tier, MIT) components for Remix 3 UI \u2014 same component API as volt-catalyst, interactions via remix/ui primitives (no preline.js).",
   "license": "MIT",
   "type": "module",
   "files": [

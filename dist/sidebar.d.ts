@@ -1,5 +1,5 @@
 /**
- * `Sidebar` family for velix-preline (API parity with velix-catalyst `sidebar.tsx`: same exports,
+ * `Sidebar` family for volt-preline (API parity with volt-catalyst `sidebar.tsx`: same exports,
  * props, context wiring, `data-current` and drawer-closing behavior; Preline sidebar look).
  *
  * - `Sidebar` is a full-height `<nav>` column painted with `bg-sidebar` tokens; the host (layout)

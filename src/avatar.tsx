@@ -1,5 +1,5 @@
 /**
- * Preline `Avatar` / `AvatarButton` for Remix UI — API-compatible with `velix-catalyst/avatar`.
+ * Preline `Avatar` / `AvatarButton` for Remix UI — API-compatible with `volt-catalyst/avatar`.
  *
  * API parity: same exports and props (`src`, `square`, `initials`, `alt`, `className`; button
  * variant adds `href`/`type`/`disabled`). The root carries `data-slot="avatar"`. When `src` is

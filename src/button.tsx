@@ -1,5 +1,5 @@
 /**
- * Preline `Button` / `TouchTarget` for Remix UI — API-compatible with `velix-catalyst/button`.
+ * Preline `Button` / `TouchTarget` for Remix UI — API-compatible with `volt-catalyst/button`.
  *
  * API parity: same exports (`Button`, `TouchTarget`, `buttonColors`, `ButtonColor`, `ButtonProps`,
  * `ButtonStyleProps`, `ButtonElementProps`) and the same discriminated props: exactly one of

@@ -1,4 +1,4 @@
-/* velix-preline: import after tailwindcss in the app's CSS. Dark mode uses the `.dark` class.
+/* volt-preline: import after tailwindcss in the app's CSS. Dark mode uses the `.dark` class.
    Requires the `preline` package (theme tokens + variants, MIT) and `@tailwindcss/forms`. */
 @import "preline/variants.css";
 @plugin "@tailwindcss/forms";

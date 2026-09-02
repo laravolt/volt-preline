@@ -3,13 +3,13 @@ import { jsx as _jsx, jsxs as _jsxs } from "remix/ui/jsx-runtime";
  * `Listbox` — Preline "Advanced Select" styling on top of `remix/ui/select/primitives` (which
  * composes `listbox` + `popover` for the button-triggered "custom select" pattern).
  *
- * API parity with `velix-catalyst/listbox`: same exports (`Listbox`, `ListboxOption`,
+ * API parity with `volt-catalyst/listbox`: same exports (`Listbox`, `ListboxOption`,
  * `ListboxLabel`, `ListboxDescription`, `nodeText`) and props (`name`, `value`, `defaultValue`,
  * `onChange(value)`, `placeholder`, `autoFocus`, `disabled`, `invalid`, aria-*, `className`/`class`,
  * `children`). Reads `Field` context through `controlAttrsFromField` (`id`, `disabled`,
  * `aria-describedby`).
  *
- * Behavior notes (shared with velix-catalyst, inherited from the primitive):
+ * Behavior notes (shared with volt-catalyst, inherited from the primitive):
  * - Values are strings (the hidden `<input type="hidden" name>` needs a string); `value` /
  *   `defaultValue` / `onChange(value)` use `string | null`.
  * - The selected option's content is rendered inside the trigger by walking `children` for the
@@ -20,7 +20,7 @@ import { jsx as _jsx, jsxs as _jsxs } from "remix/ui/jsx-runtime";
  *   current selection (the primitive only supports `defaultValue`).
  * - State selectors: highlighted option = `data-[highlighted=true]`, selected = `aria-selected`,
  *   disabled = `aria-disabled` / `disabled`, invalid trigger = `aria-invalid` / `data-invalid`.
- * - Unlike velix-catalyst (macOS-style "selected option over the trigger"), the surface drops
+ * - Unlike volt-catalyst (macOS-style "selected option over the trigger"), the surface drops
  *   below the trigger like Preline's dropdown (`bottom-start`, 8px gap, flips to top when needed).
  * - `ListboxOption` accepts an optional `label` (typeahead / accessible text); by default it is
  *   the text content of `children`.

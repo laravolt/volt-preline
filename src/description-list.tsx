@@ -1,6 +1,6 @@
 /**
  * Preline `DescriptionList` / `DescriptionTerm` / `DescriptionDetails` for Remix UI —
- * API-compatible with `velix-catalyst/description-list`.
+ * API-compatible with `volt-catalyst/description-list`.
  *
  * API parity: `<dl>` / `<dt>` / `<dd>` with `className`/`class` merging and prop passthrough.
  *

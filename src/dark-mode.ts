@@ -8,11 +8,11 @@
 export type ThemePreference = 'light' | 'dark' | 'system'
 
 export interface DarkModeOptions {
-  /** localStorage key holding an explicit ThemePreference. Default: 'velix-theme'. */
+  /** localStorage key holding an explicit ThemePreference. Default: 'volt-theme'. */
   storageKey?: string
 }
 
-const DEFAULT_KEY = 'velix-theme'
+const DEFAULT_KEY = 'volt-theme'
 
 function readPreference(key: string): ThemePreference {
   try {

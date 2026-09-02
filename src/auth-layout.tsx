@@ -1,5 +1,5 @@
 /**
- * `AuthLayout` for velix-preline (API parity with velix-catalyst `auth-layout.tsx`: same props,
+ * `AuthLayout` for volt-preline (API parity with volt-catalyst `auth-layout.tsx`: same props,
  * `className`/`class` merged onto the outer `<main>`).
  *
  * Preline sign-in look: a full-height `bg-background` page that centers one `bg-card` card

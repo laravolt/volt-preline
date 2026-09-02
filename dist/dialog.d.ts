@@ -1,7 +1,7 @@
 /**
  * `Dialog` — Preline "Modal" styling on a native `<dialog>`.
  *
- * API parity with `velix-catalyst/dialog`: `Dialog` (`open`, `onClose(false)`, `size`, `className`),
+ * API parity with `volt-catalyst/dialog`: `Dialog` (`open`, `onClose(false)`, `size`, `className`),
  * `DialogTitle`, `DialogDescription`, `DialogBody`, `DialogActions`. Same context value shape
  * (`{ titleId, descriptionId }`); `aria-labelledby` / `aria-describedby` are set automatically when a
  * title / description is rendered (or when passed explicitly on `Dialog`).

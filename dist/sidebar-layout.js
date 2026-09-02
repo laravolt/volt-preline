@@ -1,6 +1,6 @@
 import { jsx as _jsx, jsxs as _jsxs } from "remix/ui/jsx-runtime";
 /**
- * `SidebarLayout` for velix-preline (API parity with velix-catalyst `sidebar-layout.tsx`: same
+ * `SidebarLayout` for volt-preline (API parity with volt-catalyst `sidebar-layout.tsx`: same
  * `navbar`/`sidebar`/`children` props and drawer behavior; Preline application-layout look).
  *
  * - Desktop (`lg+`): a fixed 16rem `bg-sidebar border-e border-sidebar-line` column and the content

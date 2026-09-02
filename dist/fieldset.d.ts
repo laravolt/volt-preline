@@ -1,7 +1,7 @@
 /**
- * `fieldset.tsx` — Preline-styled form scaffolding with the velix-catalyst API.
+ * `fieldset.tsx` — Preline-styled form scaffolding with the volt-catalyst API.
  *
- * API parity with velix-catalyst:
+ * API parity with volt-catalyst:
  * - Same exports: `Fieldset`, `Legend`, `FieldGroup`, `Field`, `Label`, `Description`, `ErrorMessage`
  *   plus the helpers `registerFieldProvider`, `getFieldContext`, `controlAttrsFromField` and the
  *   `FieldContextValue` / `FieldsetContextValue` types.

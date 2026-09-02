@@ -1,7 +1,7 @@
 /**
- * `select.tsx` — Preline-styled native select with the velix-catalyst API.
+ * `select.tsx` — Preline-styled native select with the volt-catalyst API.
  *
- * API parity with velix-catalyst:
+ * API parity with volt-catalyst:
  * - Same export (`Select`) and props (`name`, `value`, `defaultValue`, `multiple`, `size`,
  *   `disabled`, `invalid`, `required`, `aria-describedby`, `onChange`, `children`).
  * - Native `<select>`; a chevron icon overlays single selects (none when `multiple`). The

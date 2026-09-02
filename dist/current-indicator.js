@@ -1,7 +1,7 @@
 import { jsx as _jsx } from "remix/ui/jsx-runtime";
 /**
  * Internal: the sliding "current item" marker shared by `NavbarItem` and `SidebarItem`
- * (API parity with velix-catalyst `current-indicator.tsx`; same `LayoutGroup` + `CurrentIndicator`
+ * (API parity with volt-catalyst `current-indicator.tsx`; same `LayoutGroup` + `CurrentIndicator`
  * exports and behavior).
  *
  * Mechanics:

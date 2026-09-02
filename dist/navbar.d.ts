@@ -1,5 +1,5 @@
 /**
- * `Navbar` family for velix-preline (API parity with velix-catalyst `navbar.tsx`: same exports,
+ * `Navbar` family for volt-preline (API parity with volt-catalyst `navbar.tsx`: same exports,
  * props, context wiring and `data-current` behavior; Preline navbar look).
  *
  * - `Navbar` is a `<nav>` row; hosts (layouts) paint `bg-navbar border-b border-navbar-line`.

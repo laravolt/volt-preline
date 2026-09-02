@@ -1,4 +1,4 @@
-const DEFAULT_KEY = 'velix-theme';
+const DEFAULT_KEY = 'volt-theme';
 function readPreference(key) {
     try {
         let value = localStorage.getItem(key);

@@ -1,7 +1,7 @@
 /**
- * `input.tsx` — Preline-styled text input with the velix-catalyst API.
+ * `input.tsx` — Preline-styled text input with the volt-catalyst API.
  *
- * API parity with velix-catalyst:
+ * API parity with volt-catalyst:
  * - Same exports (`Input`, `InputGroup`) and props (`type`, `name`, `value`, `defaultValue`,
  *   `placeholder`, `disabled`, `invalid`, `required`, `autoFocus`, `aria-describedby`, `onChange`,
  *   `onInput`, `className`/`class`).

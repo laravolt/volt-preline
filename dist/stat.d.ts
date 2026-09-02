@@ -1,5 +1,5 @@
 /**
- * `Stat` tile for Remix UI — API-compatible with `velix-catalyst/stat` (`title`, `value`,
+ * `Stat` tile for Remix UI — API-compatible with `volt-catalyst/stat` (`title`, `value`,
  * `change`; a leading `+` in `change` renders a green badge, otherwise red).
  *
  * Styling: Preline UI 5 stat card — `bg-card border border-card-line shadow-2xs rounded-xl`, an

@@ -1,6 +1,6 @@
 /**
  * Preline `Text` / `TextLink` / `Strong` / `Code` for Remix UI — API-compatible with
- * `velix-catalyst/text`.
+ * `volt-catalyst/text`.
  *
  * API parity: `Text` renders `<p data-slot="text">`, `TextLink` renders through `Link`
  * (`./link.tsx`), `Strong` → `<strong>`, `Code` → `<code>`; all accept `className`/`class` and

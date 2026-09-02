@@ -1,5 +1,5 @@
 /**
- * Preline `Heading` / `Subheading` for Remix UI — API-compatible with `velix-catalyst/heading`.
+ * Preline `Heading` / `Subheading` for Remix UI — API-compatible with `volt-catalyst/heading`.
  *
  * API parity: `level` (1–6, default 1 for `Heading`, 2 for `Subheading`) picks the `h*` tag via
  * `createElement`; other props spread onto the element.

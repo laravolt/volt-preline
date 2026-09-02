@@ -1,5 +1,5 @@
 /**
- * `Pagination` family for velix-preline (API parity with velix-catalyst `pagination.tsx`: same
+ * `Pagination` family for volt-preline (API parity with volt-catalyst `pagination.tsx`: same
  * exports and props; Preline pagination look).
  *
  * - `Pagination` is `<nav aria-label="Page navigation">` (label overridable).

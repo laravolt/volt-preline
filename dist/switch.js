@@ -1,8 +1,8 @@
 import { jsx as _jsx, jsxs as _jsxs } from "remix/ui/jsx-runtime";
 /**
- * `switch.tsx` — Preline toggle switch with the velix-catalyst API.
+ * `switch.tsx` — Preline toggle switch with the volt-catalyst API.
  *
- * API parity with velix-catalyst:
+ * API parity with volt-catalyst:
  * - Same exports (`SwitchGroup`, `SwitchField`, `Switch`) and props (`color`, `name`, `value`,
  *   `checked`, `defaultChecked`, `disabled`, `required`, `aria-label`, `aria-describedby`,
  *   `onChange(checked, event)`).
@@ -12,7 +12,7 @@ import { jsx as _jsx, jsxs as _jsxs } from "remix/ui/jsx-runtime";
  * - `checked`/`defaultChecked` use conditional spreads (rc.1: never pass `checked={undefined}`).
  * - `SwitchField` provides the same field context as `Field` and lays out label/description on the
  *   left with the switch on the right.
- * - `color` keys match velix-catalyst; mapped to the checked track color (default `primary-checked`).
+ * - `color` keys match volt-catalyst; mapped to the checked track color (default `primary-checked`).
  *
  * Hydration: no client entry is needed for form posting; `onChange` needs one.
  */
@@ -41,7 +41,7 @@ export function SwitchField(handle) {
     };
 }
 registerFieldProvider(SwitchField);
-/** Checked track color per velix-catalyst color key. */
+/** Checked track color per volt-catalyst color key. */
 const colors = {
     'dark/zinc': 'peer-checked:bg-primary-checked',
     'dark/white': 'peer-checked:bg-primary-checked',

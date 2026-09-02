@@ -1,7 +1,7 @@
 /**
- * `checkbox.tsx` — Preline-styled native checkbox with the velix-catalyst API.
+ * `checkbox.tsx` — Preline-styled native checkbox with the volt-catalyst API.
  *
- * API parity with velix-catalyst:
+ * API parity with volt-catalyst:
  * - Same exports (`CheckboxGroup`, `CheckboxField`, `Checkbox`) and props (`color`, `name`, `value`,
  *   `checked`, `defaultChecked`, `indeterminate`, `disabled`, `required`, `aria-label`,
  *   `aria-describedby`, `onChange(checked, event)`).
@@ -14,7 +14,7 @@
  * - `onChange` is bound via `on('change')` (needs a client entry).
  * - `CheckboxField` provides the same field context as `Field` (id/description/error/disabled) and
  *   lays out control / label / description in Preline's "checkbox with description" arrangement.
- * - `color` keeps velix-catalyst's key set; with `@tailwindcss/forms` the checked fill is
+ * - `color` keeps volt-catalyst's key set; with `@tailwindcss/forms` the checked fill is
  *   `currentColor`, so colors map to `text-*` utilities (default → `text-primary-checked`).
  *
  * Hydration: no client entry is needed for form posting; `onChange`/`indeterminate` need one.

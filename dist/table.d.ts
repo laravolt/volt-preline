@@ -1,14 +1,14 @@
 /**
- * Preline `Table` family for Remix UI — API-compatible with `velix-catalyst/table`.
+ * Preline `Table` family for Remix UI — API-compatible with `volt-catalyst/table`.
  *
  * API parity:
  * - `Table` provides `{ bleed, dense, grid, striped }` through `handle.context` (same shape as
- *   velix-catalyst's `TableContextValue`); `TableHead`/`TableBody`/`TableRow`/`TableHeader`/
+ *   volt-catalyst's `TableContextValue`); `TableHead`/`TableBody`/`TableRow`/`TableHeader`/
  *   `TableCell` read it.
  * - `TableRow` provides `{ href, target, title, nextCellIndex }`; when a row has `href`, every
  *   `TableCell` renders an absolutely positioned `<a data-row-link>` overlay (`./link.tsx`) with
  *   `aria-label={title}`; only the first cell's overlay is tabbable (`tabIndex 0`, others `-1`).
- * - Root element gets the `className` and the other props (same as velix-catalyst).
+ * - Root element gets the `className` and the other props (same as volt-catalyst).
  *
  * Styling: Preline UI 5 table — `min-w-full divide-y divide-table-line`, header cells
  * `text-xs font-semibold uppercase text-muted-foreground-1`, body cells `text-sm text-foreground`,

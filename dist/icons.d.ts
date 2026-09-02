@@ -1,5 +1,5 @@
 /**
- * Small Heroicons (MIT) 16/20px subset — same export names as `velix-catalyst/icons` so imports are
+ * Small Heroicons (MIT) 16/20px subset — same export names as `volt-catalyst/icons` so imports are
  * drop-in. Each icon is `<svg data-slot="icon" aria-hidden="true" fill="currentColor">` so the
  * Button / Sidebar icon selectors (`*:data-[slot=icon]:…`) apply. Static markup, no hydration.
  */

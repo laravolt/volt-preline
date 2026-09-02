@@ -1,7 +1,7 @@
 /**
- * `radio.tsx` — Preline-styled native radio with the velix-catalyst API.
+ * `radio.tsx` — Preline-styled native radio with the volt-catalyst API.
  *
- * API parity with velix-catalyst:
+ * API parity with volt-catalyst:
  * - Same exports (`RadioGroup`, `RadioField`, `Radio`) and props. `RadioGroup` is a
  *   `<div role="radiogroup">` sharing `name`, `value`/`defaultValue`, `disabled` and
  *   `onChange(value, event)` with its `Radio`s through context; radios are grouped natively through
@@ -9,7 +9,7 @@
  * - `Radio` is a *visible* native `<input type="radio">` styled by `@tailwindcss/forms` + Preline
  *   (`rounded-full`). `checked`/`defaultChecked` use conditional spreads (rc.1 gotcha).
  * - `RadioField` provides the same field context as `Field` (id/description/error/disabled).
- * - `color` keys match velix-catalyst; mapped to `text-*` utilities (checked fill is `currentColor`).
+ * - `color` keys match volt-catalyst; mapped to `text-*` utilities (checked fill is `currentColor`).
  *
  * Hydration: no client entry is needed for form posting; `RadioGroup.onChange` needs one.
  */

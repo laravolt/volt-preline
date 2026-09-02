@@ -1,7 +1,7 @@
 /**
  * `Combobox` — Preline "ComboBox" styling on top of `remix/ui/combobox/primitives`.
  *
- * API parity with `velix-catalyst/combobox`: same exports (`Combobox`, `ComboboxOption`,
+ * API parity with `volt-catalyst/combobox`: same exports (`Combobox`, `ComboboxOption`,
  * `ComboboxLabel`, `ComboboxDescription`) and props: `options`, `displayValue(option)`, optional
  * `filter(option, query)` (default: `displayValue` includes the query, case-insensitive),
  * `valueKey(option)`, `value` / `defaultValue` / `onChange(option | null)`, `name`, `placeholder`,
@@ -9,7 +9,7 @@
  * `children(option)` render function returning a `<ComboboxOption value={option}>`. Reads `Field`
  * context through `controlAttrsFromField` (`id`, `disabled`, `aria-describedby`).
  *
- * Behavior notes (shared with velix-catalyst, inherited from the primitive):
+ * Behavior notes (shared with volt-catalyst, inherited from the primitive):
  * - Options are arbitrary `T`, but the form value must be a string: `valueKey(option)` (default:
  *   `String(option)` for primitives, `displayValue(option)` for objects) is what the hidden
  *   `<input type="hidden" name>` carries and what `onChange` is resolved from.

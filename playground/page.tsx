@@ -29,9 +29,9 @@ export function Document(handle: Handle<{ title: string; children?: RemixNode }>
 
 export function KitchenSink(handle: Handle<{ sections: Array<{ id: string; title: string; node: RemixNode }> }>) {
   return () => (
-    <Document title="velix-preline playground">
+    <Document title="volt-preline playground">
       <main className="mx-auto max-w-6xl space-y-16 p-8">
-        <h1 className="text-2xl font-semibold">velix-preline playground</h1>
+        <h1 className="text-2xl font-semibold">volt-preline playground</h1>
         <nav className="flex flex-wrap gap-3 text-sm">
           {handle.props.sections.map((s) => (
             <a key={s.id} href={`#${s.id}`} className="underline">

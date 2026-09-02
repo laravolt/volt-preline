@@ -1,12 +1,12 @@
-# velix-preline conventions (Remix 3.0.0-rc.1)
+# volt-preline conventions (Remix 3.0.0-rc.1)
 
-Goal: an MIT component library for Remix UI with the **same component API as `velix-catalyst`**
+Goal: an MIT component library for Remix UI with the **same component API as `volt-catalyst`**
 (same file names, export names and props) but styled with **Preline UI 5** (free tier) markup and
 semantic tokens. Interactions come from `remix/ui/*` primitives — **`preline.js` is never used**.
 Apps switch tiers by changing the import package only.
 
 ## Sources of truth
-- API contract + behavior reference: `~/Developer/velix-catalyst/src/<name>.tsx` (private, Tailwind
+- API contract + behavior reference: `~/Developer/volt-catalyst/src/<name>.tsx` (private, Tailwind
   Plus). Mirror its exports, props, context wiring, primitive usage, and a11y. **Never copy its
   Tailwind class strings, layout tricks or design details** — that code is licensed; only the
   behavior/structure may be reused. If in doubt, rewrite.
@@ -22,7 +22,7 @@ Apps switch tiers by changing the import package only.
   in `src/styles.css`); tokens already switch, so `dark:` classes are rarely needed.
 - `@tailwindcss/forms` is loaded: native inputs/checkbox/radio use its base styles like Preline does.
 
-## Component shape (identical to velix-catalyst)
+## Component shape (identical to volt-catalyst)
 - `function X(handle: Handle<Props>) { return () => … }`, `children?: RemixNode`, props accept
   `className` and `class` via `splitProps`/`cx` from `src/utils.ts`, typed props extending
   `ElementProps`, context via `handle.context` with the same context value shapes
@@ -33,7 +33,7 @@ Apps switch tiers by changing the import package only.
 - Overlays: native `<dialog>` for Dialog/Alert (CSS transitions with `open:`/`starting:open:` /
   `transition-discrete`), `remix/ui/menu/primitives` for Dropdown, `remix/ui/select/primitives` for
   Listbox, `remix/ui/combobox/primitives` for Combobox, `remix/ui/animation` for the current
-  indicator. Same props as velix-catalyst (`open`, `onClose`, `anchor`, `onSelect`, `value`,
+  indicator. Same props as volt-catalyst (`open`, `onClose`, `anchor`, `onSelect`, `value`,
   `onChange`, `displayValue`, `filter`, `valueKey`, …).
 - rc.1 gotcha: never pass `checked/value/open/selected={undefined}` explicitly on host elements;
   use conditional spreads.
@@ -41,6 +41,6 @@ Apps switch tiers by changing the import package only.
 ## Quality gate per component
 1. `npx tsc --noEmit` clean for your files.
 2. Section in `playground/sections/<group>.tsx` rendering every variant (a `clientEntry` island).
-3. Playwright spec `playground/tests/<group>.spec.ts` (behavior parity with velix-catalyst's spec
+3. Playwright spec `playground/tests/<group>.spec.ts` (behavior parity with volt-catalyst's spec
    for the same group — you may read that spec for the assertions, then write your own).
-4. JSDoc at the top of each file: API parity notes vs velix-catalyst and hydration requirements.
+4. JSDoc at the top of each file: API parity notes vs volt-catalyst and hydration requirements.

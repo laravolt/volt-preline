@@ -7,7 +7,7 @@
  */
 export type ThemePreference = 'light' | 'dark' | 'system';
 export interface DarkModeOptions {
-    /** localStorage key holding an explicit ThemePreference. Default: 'velix-theme'. */
+    /** localStorage key holding an explicit ThemePreference. Default: 'volt-theme'. */
     storageKey?: string;
 }
 export declare function resolveIsDark(preference: ThemePreference): boolean;

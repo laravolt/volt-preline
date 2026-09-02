@@ -1,5 +1,5 @@
 /**
- * Preline `Divider` for Remix UI — API-compatible with `velix-catalyst/divider`.
+ * Preline `Divider` for Remix UI — API-compatible with `volt-catalyst/divider`.
  *
  * API parity: `<hr role="presentation">` with an optional `soft` flag.
  * Styling: Preline horizontal rule on the theme border tokens (`border-border`; `soft` uses the

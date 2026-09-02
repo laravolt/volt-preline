@@ -1,8 +1,8 @@
 import { jsx as _jsx } from "remix/ui/jsx-runtime";
 /**
- * `textarea.tsx` — Preline-styled textarea with the velix-catalyst API.
+ * `textarea.tsx` — Preline-styled textarea with the volt-catalyst API.
  *
- * API parity with velix-catalyst:
+ * API parity with volt-catalyst:
  * - Same export (`Textarea`) and props (`name`, `value`, `defaultValue`, `placeholder`, `rows`,
  *   `disabled`, `invalid`, `required`, `resizable`, `aria-describedby`, `onChange`, `onInput`).
  * - Native `<textarea>` in a `data-slot="control"` span; `invalid` → `aria-invalid="true"`.

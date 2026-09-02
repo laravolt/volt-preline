@@ -1,6 +1,6 @@
 import { jsx as _jsx, jsxs as _jsxs } from "remix/ui/jsx-runtime";
 /**
- * `StackedLayout` for velix-preline (API parity with velix-catalyst `stacked-layout.tsx`: same
+ * `StackedLayout` for volt-preline (API parity with volt-catalyst `stacked-layout.tsx`: same
  * `navbar`/`sidebar`/`children` props and drawer behavior; Preline navbar-on-top layout).
  *
  * A `bg-navbar border-b border-navbar-line` header spans the top with the `navbar` node; below `lg`
