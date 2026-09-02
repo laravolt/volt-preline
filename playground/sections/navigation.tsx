@@ -1,6 +1,17 @@
 /** Kitchen-sink section: Sidebar, Navbar, SidebarLayout, StackedLayout, Pagination, Link, AuthLayout. */
 import { clientEntry, on, type Handle, type RemixNode } from 'remix/ui'
 
+import { Avatar } from '../../src/avatar.tsx'
+import {
+  ChevronDownIcon,
+  HomeIcon,
+  InboxIcon,
+  MagnifyingGlassIcon,
+  QuestionMarkCircleIcon,
+  Square2StackIcon,
+  TicketIcon,
+  UserCircleIcon,
+} from '../../src/icons.tsx'
 import { AuthLayout } from '../../src/auth-layout.tsx'
 import { Link } from '../../src/link.tsx'
 import { Navbar, NavbarDivider, NavbarItem, NavbarLabel, NavbarSection, NavbarSpacer } from '../../src/navbar.tsx'
@@ -27,50 +38,6 @@ import {
 } from '../../src/sidebar.tsx'
 import { StackedLayout } from '../../src/stacked-layout.tsx'
 
-// Inline Lucide-style stroke icons (Preline's icon style) so this section stays self-contained.
-function HomeIcon() {
-  return () => (
-    <svg data-slot="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-      <path d="M9 22V12h6v10" />
-    </svg>
-  )
-}
-
-function TicketIcon() {
-  return () => (
-    <svg data-slot="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z" />
-      <path d="M13 5v2M13 17v2M13 11v2" />
-    </svg>
-  )
-}
-
-function BoxIcon() {
-  return () => (
-    <svg data-slot="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <rect x="3" y="3" width="18" height="18" rx="2" />
-    </svg>
-  )
-}
-
-function ChevronDownIcon() {
-  return () => (
-    <svg data-slot="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d="m6 9 6 6 6-6" />
-    </svg>
-  )
-}
-
-function SearchIcon() {
-  return () => (
-    <svg data-slot="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <circle cx="11" cy="11" r="8" />
-      <path d="m21 21-4.3-4.3" />
-    </svg>
-  )
-}
-
 function DemoSidebar(handle: Handle<{ testid: string; current: string }>) {
   return () => {
     let { testid, current } = handle.props
@@ -79,7 +46,7 @@ function DemoSidebar(handle: Handle<{ testid: string; current: string }>) {
         <SidebarHeader>
           <SidebarSection>
             <SidebarItem href="#" aria-label="Team">
-              <BoxIcon />
+              <Avatar initials="P" square className="size-5 bg-primary text-primary-foreground" />
               <SidebarLabel>Preline</SidebarLabel>
               <ChevronDownIcon />
             </SidebarItem>
@@ -96,7 +63,7 @@ function DemoSidebar(handle: Handle<{ testid: string; current: string }>) {
               <SidebarLabel>Events</SidebarLabel>
             </SidebarItem>
             <SidebarItem href="#orders" current={current === 'orders'}>
-              <BoxIcon />
+              <Square2StackIcon />
               <SidebarLabel>Orders</SidebarLabel>
             </SidebarItem>
           </SidebarSection>
@@ -109,7 +76,7 @@ function DemoSidebar(handle: Handle<{ testid: string; current: string }>) {
           <SidebarSpacer />
           <SidebarSection>
             <SidebarItem href="#support">
-              <BoxIcon />
+              <QuestionMarkCircleIcon />
               <SidebarLabel>Support</SidebarLabel>
             </SidebarItem>
           </SidebarSection>
@@ -117,7 +84,7 @@ function DemoSidebar(handle: Handle<{ testid: string; current: string }>) {
         <SidebarFooter>
           <SidebarSection>
             <SidebarItem href="#profile">
-              <BoxIcon />
+              <UserCircleIcon />
               <SidebarLabel>Erica</SidebarLabel>
             </SidebarItem>
           </SidebarSection>
@@ -133,10 +100,10 @@ function DemoNavbar(handle: Handle<{ children?: RemixNode }>) {
       <NavbarSpacer />
       <NavbarSection>
         <NavbarItem href="#search" aria-label="Search">
-          <SearchIcon />
+          <MagnifyingGlassIcon />
         </NavbarItem>
         <NavbarItem href="#inbox" aria-label="Inbox">
-          <BoxIcon />
+          <InboxIcon />
         </NavbarItem>
       </NavbarSection>
       {handle.props.children}
@@ -188,7 +155,7 @@ export const Section = clientEntry(import.meta.url, function Section(handle: Han
             navbar={
               <Navbar>
                 <NavbarItem href="#" aria-label="Team">
-                  <BoxIcon />
+                  <Avatar initials="P" square className="size-5 bg-primary text-primary-foreground" />
                   <NavbarLabel>Preline</NavbarLabel>
                   <ChevronDownIcon />
                 </NavbarItem>
@@ -203,7 +170,7 @@ export const Section = clientEntry(import.meta.url, function Section(handle: Han
                 <NavbarSpacer />
                 <NavbarSection>
                   <NavbarItem href="#search" aria-label="Search">
-                    <SearchIcon />
+                    <MagnifyingGlassIcon />
                   </NavbarItem>
                 </NavbarSection>
               </Navbar>
@@ -222,7 +189,7 @@ export const Section = clientEntry(import.meta.url, function Section(handle: Han
         <div className="rounded-xl border border-navbar-line bg-navbar px-4">
           <Navbar data-testid="navbar">
             <NavbarItem href="#" aria-label="Team">
-              <BoxIcon />
+              <Avatar initials="P" square className="size-5 bg-primary text-primary-foreground" />
               <NavbarLabel>Preline</NavbarLabel>
               <ChevronDownIcon />
             </NavbarItem>
@@ -245,10 +212,10 @@ export const Section = clientEntry(import.meta.url, function Section(handle: Han
             <NavbarSpacer />
             <NavbarSection>
               <NavbarItem href="#search" aria-label="Search">
-                <SearchIcon />
+                <MagnifyingGlassIcon />
               </NavbarItem>
               <NavbarItem href="#inbox" aria-label="Inbox">
-                <BoxIcon />
+                <InboxIcon />
               </NavbarItem>
             </NavbarSection>
           </Navbar>
