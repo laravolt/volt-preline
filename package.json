@@ -3,7 +3,33 @@
   "version": "0.1.0",
   "description": "Preline UI (free tier, MIT) components for Remix 3 UI \u2014 same component API as volt-catalyst, interactions via remix/ui primitives (no preline.js).",
   "license": "MIT",
+  "author": "Laravolt",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laravolt/volt-preline.git"
+  },
+  "homepage": "https://github.com/laravolt/volt-preline#readme",
+  "bugs": {
+    "url": "https://github.com/laravolt/volt-preline/issues"
+  },
+  "keywords": [
+    "remix",
+    "remix-3",
+    "remix-ui",
+    "preline",
+    "tailwindcss",
+    "components",
+    "ui-kit",
+    "volt",
+    "laravolt"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "engines": {
+    "node": ">=24.3.0"
+  },
   "files": [
     "dist",
     "src",
@@ -30,6 +56,12 @@
     "test:e2e": "playwright test",
     "prepack": "npm run build"
   },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "preline": "5.0.0"
+  },
   "peerDependencies": {
     "remix": "3.0.0-rc.1",
     "tailwindcss": "^4.0.0",
@@ -43,8 +75,5 @@
     "remix": "3.0.0-rc.1",
     "tailwindcss": "4.2.2",
     "typescript": "6.0.2"
-  },
-  "dependencies": {
-    "preline": "5.0.0"
   }
 }
