@@ -1,7 +1,7 @@
 {
   "name": "volt-preline",
-  "version": "0.1.0",
-  "description": "Preline UI (free tier, MIT) components for Remix 3 UI \u2014 same component API as volt-catalyst, interactions via remix/ui primitives (no preline.js).",
+  "version": "0.1.1",
+  "description": "Preline UI (free tier, MIT) components for Remix 3 UI — same component API as volt-catalyst, interactions via remix/ui primitives (no preline.js).",
   "license": "MIT",
   "author": "Laravolt",
   "type": "module",
