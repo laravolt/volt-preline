@@ -160,6 +160,28 @@ export const Section = clientEntry(import.meta.url, function Section(_handle: Ha
             </TableRow>
           </TableBody>
         </Table>
+        <Table responsive="stack" data-testid="table-stack">
+          <TableHead>
+            <TableRow>
+              <TableHeader>Name</TableHeader>
+              <TableHeader>Email</TableHeader>
+              <TableHeader>Role</TableHeader>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {users.map((user, i) => (
+              <TableRow key={`stack-${user.handle}`} data-testid={`table-stack-row-${i}`}>
+                <TableCell stackedLabel="Name" className="font-medium">
+                  {user.name}
+                </TableCell>
+                <TableCell stackedLabel="Email">{user.email}</TableCell>
+                <TableCell stackedLabel="Role" className="text-muted-foreground-1">
+                  {user.role}
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4" data-testid="stats">

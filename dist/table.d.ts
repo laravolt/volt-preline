@@ -21,17 +21,20 @@
  * Hydration: none required; row links are ordinary anchors enhanced by Remix `run()`.
  */
 import type { ElementProps, Handle, RemixNode } from 'remix/ui';
+export type TableResponsive = 'stack';
 export type TableContextValue = {
     bleed: boolean;
     dense: boolean;
     grid: boolean;
     striped: boolean;
+    responsive?: TableResponsive;
 };
 export type TableProps = {
     bleed?: boolean;
     dense?: boolean;
     grid?: boolean;
     striped?: boolean;
+    responsive?: TableResponsive;
     className?: string;
     class?: string;
     children?: RemixNode;
@@ -61,4 +64,7 @@ export type TableRowProps = {
 } & ElementProps;
 export declare function TableRow(handle: Handle<TableRowProps, TableRowContextValue>): () => import("remix/ui").RemixElement;
 export declare function TableHeader(handle: Handle<TableSectionProps>): () => import("remix/ui").RemixElement;
-export declare function TableCell(handle: Handle<TableSectionProps>): () => import("remix/ui").RemixElement;
+export type TableCellProps = TableSectionProps & {
+    stackedLabel?: string;
+};
+export declare function TableCell(handle: Handle<TableCellProps>): () => import("remix/ui").RemixElement;

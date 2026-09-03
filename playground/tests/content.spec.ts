@@ -193,6 +193,21 @@ test('table context flags and full-row link', async ({ page }) => {
   await expect(page).toHaveURL(/#lesliealexander$/)
 })
 
+test('responsive="stack" table renders accessible labels and cards on narrow viewport', async ({ page }) => {
+  let table = page.getByTestId('table-stack')
+  await expect(table.locator('thead')).toHaveClass(/sr-only/)
+  await expect(table.locator('tbody')).toHaveClass(/flex/)
+  let firstRow = page.getByTestId('table-stack-row-0')
+  await expect(firstRow).toHaveClass(/flex-col/)
+  await expect(firstRow).toHaveClass(/rounded-lg/)
+  let stackedLabels = firstRow.locator('span[aria-hidden="true"]')
+  await expect(stackedLabels).toHaveCount(3)
+  await expect(stackedLabels.first()).toHaveText('Name')
+  // Non-stacked tables remain standard: plain header is visible, no stacked labels
+  await expect(page.getByTestId('table-plain').locator('thead')).not.toHaveClass(/sr-only/)
+  await expect(page.getByTestId('table-plain').locator('span[aria-hidden="true"]')).toHaveCount(0)
+})
+
 test('stats', async ({ page }) => {
   let stats = page.getByTestId('stats')
   await expect(stats.locator('[data-testid^="stat-"]')).toHaveCount(2)
