@@ -7,14 +7,52 @@
  * `<dialog>` drawer as `SidebarLayout` (shared `mobileSidebarDialogClasses`): slide transition,
  * dimmed backdrop, closes on Escape, backdrop click, "Close navigation" and `SidebarItem` links.
  *
- * Hydration: render inside an app `clientEntry` so the open/close buttons are wired; the layout
- * itself is not a client entry.
+ * Hydration: `StackedLayoutChrome` (drawer + header) belongs inside an app `clientEntry` so the
+ * open/close buttons are wired. Keep `StackedLayoutContent` OUTSIDE that client entry: page content
+ * passed as island `children` is serialized and loses every `mix`.
  */
 import { on, ref, type ElementProps, type Handle, type RemixNode } from 'remix/ui'
 
 import { NavbarItem } from './navbar.tsx'
 import { CloseMenuIcon, OpenMenuIcon, mobileSidebarDialogClasses, mobileSidebarPanelClasses } from './sidebar-layout.tsx'
 import { cx, splitProps } from './utils.ts'
+
+export type StackedLayoutChromeProps = {
+  navbar: RemixNode
+  sidebar: RemixNode
+}
+
+export type StackedLayoutRootProps = {
+  className?: string
+  class?: string
+  children?: RemixNode
+} & ElementProps
+
+/** Outer flex column (`min-h-svh`). Server-renderable; wrap `StackedLayoutChrome` + `StackedLayoutContent`. */
+export function StackedLayoutRoot(handle: Handle<StackedLayoutRootProps>) {
+  return () => {
+    let { className, rest } = splitProps(handle.props)
+    let { children, ...attrs } = rest
+    return (
+      <div {...attrs} className={cx(className, 'relative isolate flex min-h-svh w-full flex-col bg-background text-foreground')}>
+        {children}
+      </div>
+    )
+  }
+}
+
+/** The `<main>` content well. Server-renderable, so page content (forms, nested client entries) keeps its mixins. */
+export function StackedLayoutContent(handle: Handle<{ children?: RemixNode }>) {
+  return () => (
+    <>
+        <main className="flex flex-1 flex-col">
+          <div className="grow p-4 sm:p-6 lg:p-8">
+            <div className="mx-auto w-full max-w-6xl">{handle.props.children}</div>
+          </div>
+        </main>
+    </>
+  )
+}
 
 export type StackedLayoutProps = {
   navbar: RemixNode
@@ -24,7 +62,7 @@ export type StackedLayoutProps = {
   children?: RemixNode
 } & ElementProps
 
-export function StackedLayout(handle: Handle<StackedLayoutProps>) {
+export function StackedLayoutChrome(handle: Handle<StackedLayoutChromeProps>) {
   let dialog: HTMLDialogElement | undefined
   let panel: HTMLElement | undefined
 
@@ -36,11 +74,10 @@ export function StackedLayout(handle: Handle<StackedLayoutProps>) {
   }
 
   return () => {
-    let { className, rest } = splitProps(handle.props)
-    let { navbar, sidebar, children, ...attrs } = rest
+    let { navbar, sidebar } = handle.props
 
     return (
-      <div {...attrs} className={cx(className, 'relative isolate flex min-h-svh w-full flex-col bg-background text-foreground')}>
+      <>
         {/* Sidebar on mobile */}
         <dialog
           aria-label="Navigation"
@@ -79,13 +116,26 @@ export function StackedLayout(handle: Handle<StackedLayoutProps>) {
           <div className="min-w-0 flex-1">{navbar}</div>
         </header>
 
-        {/* Content */}
-        <main className="flex flex-1 flex-col">
-          <div className="grow p-4 sm:p-6 lg:p-8">
-            <div className="mx-auto w-full max-w-6xl">{children}</div>
-          </div>
-        </main>
-      </div>
+      </>
+    )
+  }
+}
+
+/**
+ * Backwards-compatible composition. Prefer `StackedLayoutRoot` + `StackedLayoutChrome` (inside a
+ * `clientEntry`) + `StackedLayoutContent` (outside it): passing page content through a client entry's
+ * `children` serializes it, which strips `mix` handlers and nested client entries
+ * ("Framework invariant: Invalid mix prop" on hydration).
+ */
+export function StackedLayout(handle: Handle<StackedLayoutProps>) {
+  return () => {
+    let { className, rest } = splitProps(handle.props)
+    let { navbar, sidebar, children, ...attrs } = rest
+    return (
+      <StackedLayoutRoot {...attrs} className={className}>
+        <StackedLayoutChrome navbar={navbar} sidebar={sidebar} />
+        <StackedLayoutContent>{children}</StackedLayoutContent>
+      </StackedLayoutRoot>
     )
   }
 }
