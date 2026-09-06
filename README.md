@@ -33,22 +33,45 @@ import { installDarkMode } from 'volt-preline/dark-mode'
 installDarkMode()
 ```
 
-2. **Server-Side Rendering**: read the theme cookie so the initial HTML is rendered with `class="dark"` immediately, preventing theme flash:
+2. **Server-Side Rendering**: read the theme cookie so the initial HTML is rendered with `className="dark"` immediately, preventing theme flash:
 ```tsx
-import { readThemeCookie, themeHtmlProps, darkModeHeadScript } from 'volt-preline/dark-mode'
+import type { Handle, RemixNode } from 'remix/ui'
+import {
+  readThemeCookie,
+  themeHtmlProps,
+  darkModeHeadScript,
+  type ServerTheme,
+} from 'volt-preline/dark-mode'
 
-export function Document({ request, children }: { request: Request; children: React.ReactNode }) {
-  let theme = readThemeCookie(request.headers.get('cookie')) // 'light' | 'dark' | null
-
-  return (
-    <html lang="en" {...themeHtmlProps(theme)}>
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: darkModeHeadScript() }} />
-      </head>
-      <body>{children}</body>
-    </html>
-  )
+export interface DocumentProps {
+  title?: string
+  theme?: ServerTheme
+  children?: RemixNode
 }
+
+export function Document(handle: Handle<DocumentProps>) {
+  return () => {
+    let { title = 'Volt App', theme = null, children } = handle.props
+    return (
+      <html lang="id" {...themeHtmlProps(theme)}>
+        <head>
+          <meta charSet="utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <title>{title}</title>
+          <script dangerouslySetInnerHTML={{ __html: darkModeHeadScript() }} />
+        </head>
+        <body className="bg-background text-foreground antialiased">{children}</body>
+      </html>
+    )
+  }
+}
+```
+
+In your controller or route handler, pass the theme from the request header:
+```ts
+let theme = readThemeCookie(context.request.headers.get('cookie'))
+return context.render(<MyPage theme={theme} />)
+// Or expose it application-wide via middleware using AsyncLocalStorage
 ```
 
 3. **CSS Color-Scheme Rule**: In your `app/styles/app.css`, declare `html.dark { color-scheme: dark; }`:
