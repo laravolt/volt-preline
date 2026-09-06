@@ -69,6 +69,26 @@ setTheme('light')  // saves to localStorage AND writes cookie
 setTheme('system') // clears localStorage AND expires cookie
 ```
 
+## Alert Dialog Alignment
+
+The `Alert` component supports an optional `align?: 'start' | 'center'` prop (default `'start'`):
+
+```tsx
+import { Alert, AlertTitle, AlertDescription, AlertActions } from 'volt-preline/alert'
+import { Button } from 'volt-preline/button'
+
+<Alert open={isOpen} onClose={() => setIsOpen(false)} align="center">
+  <AlertTitle>Hapus Data?</AlertTitle>
+  <AlertDescription>Tindakan ini permanen dan tidak dapat dibatalkan.</AlertDescription>
+  <AlertActions>
+    <Button plain type="button" onClick={() => setIsOpen(false)}>Batal</Button>
+    <Button color="red" type="submit">Hapus</Button>
+  </AlertActions>
+</Alert>
+```
+
+> **Inherited text alignment in table cells**: When a dialog or confirmation modal (such as `ConfirmDialog`) is rendered inside a right-aligned table cell (`<td class="text-right">`), descendant elements inherit `text-align: right` unless overridden. Specifying `align="center"` (or `'start'`) ensures consistent text alignment and centers action buttons via `sm:justify-center`.
+
 ## Develop
 ```sh
 bun install
