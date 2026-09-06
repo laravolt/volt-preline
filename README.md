@@ -89,6 +89,102 @@ import { Button } from 'volt-preline/button'
 
 > **Inherited text alignment in table cells**: When a dialog or confirmation modal (such as `ConfirmDialog`) is rendered inside a right-aligned table cell (`<td class="text-right">`), descendant elements inherit `text-align: right` unless overridden. Specifying `align="center"` (or `'start'`) ensures consistent text alignment and centers action buttons via `sm:justify-center`.
 
+## Button Props (Important Convention)
+
+`Button` (`volt-preline/button`) uses discriminated style props matching `volt-catalyst/button`. It accepts **exactly one** of:
+- `color="blue"` (or any valid `ButtonColor`: `red`, `zinc`, `dark`, etc.) for a solid button
+- `outline` (boolean prop) for an outline button
+- `plain` (boolean prop) for a ghost/plain button
+
+> ⚠️ **Common Mistake**: Do **not** use `variant="outline"` or `variant="ghost"`. The `variant` prop does not exist on `Button` and will fail TypeScript typechecking.
+> - Instead of `<Button variant="outline">`, write `<Button outline>`.
+> - Instead of `<Button variant="ghost">`, write `<Button plain>`.
+
+## Combobox Recipe: Searchable Single-Select
+
+When selecting from a dataset with >5 options, use `Combobox` inside an island (`clientEntry`). For typed options, instantiate once:
+
+```tsx
+import { clientEntry, on, type Handle } from 'remix/ui'
+import {
+  Combobox,
+  ComboboxOption,
+  ComboboxLabel,
+  ComboboxDescription,
+} from 'volt-preline/combobox'
+import { Button } from 'volt-preline/button'
+
+export type Shareholder = {
+  id: string
+  name: string
+  group: string
+  totalShares: number
+}
+
+const ShareholderCombobox = Combobox as typeof Combobox<Shareholder>
+const ShareholderComboboxOption = ComboboxOption as typeof ComboboxOption<Shareholder>
+
+export const ShareholderSelector = clientEntry<{
+  shareholders: Shareholder[]
+  selectedId: string
+  onChange: (id: string) => void
+}>(import.meta.url, function ShareholderSelector(handle) {
+  return () => {
+    let { shareholders, selectedId, onChange } = handle.props
+    let current = shareholders.find((s) => s.id === selectedId) ?? null
+
+    return (
+      <div className="flex items-center gap-2">
+        <div className="flex-1 min-w-[240px]">
+          <ShareholderCombobox
+            name="shareholder_id"
+            options={shareholders}
+            displayValue={(sh) => sh?.name ?? ''}
+            valueKey={(sh) => sh.id}
+            value={current}
+            onChange={(sh) => {
+              onChange(sh?.id ?? '')
+              handle.update()
+            }}
+            filter={(sh, query) => {
+              let q = query.toLowerCase().trim()
+              return (
+                sh.name.toLowerCase().includes(q) ||
+                sh.group.toLowerCase().includes(q)
+              )
+            }}
+            placeholder="Cari pemegang saham..."
+          >
+            {(sh) => (
+              <ShareholderComboboxOption value={sh}>
+                <ComboboxLabel>{sh.name}</ComboboxLabel>
+                <ComboboxDescription>
+                  {sh.group} · {sh.totalShares} lembar
+                </ComboboxDescription>
+              </ShareholderComboboxOption>
+            )}
+          </ShareholderCombobox>
+        </div>
+
+        {current && (
+          <Button
+            type="button"
+            plain
+            aria-label="Kosongkan pilihan"
+            mix={on<HTMLButtonElement, 'click'>('click', () => {
+              onChange('')
+              handle.update()
+            })}
+          >
+            Kosongkan
+          </Button>
+        )}
+      </div>
+    )
+  }
+})
+```
+
 ## Develop
 ```sh
 bun install
