@@ -18,9 +18,56 @@ Interactions (dropdown, listbox, combobox, dialog, drawers) are built on `remix/
 @import "volt-preline/styles.css";   /* variants + @tailwindcss/forms + theme tokens + .dark variant */
 @source "../../node_modules/volt-preline/dist";
 ```
-Add `"volt-preline"` to `assets.allowPackages` in `remix.json`. Dark mode: call `installDarkMode()` from `volt-preline/dark-mode` in your browser entry (it follows
-the OS setting or a saved choice via `setTheme()`, and survives Remix frame navigations), and inline
-`darkModeHeadScript()` in `<head>` to avoid a flash.
+Add `"volt-preline"` to `assets.allowPackages` in `remix.json`.
+
+## Dark Mode
+
+`volt-preline/dark-mode` manages theme preferences across server rendering and Remix frame DOM patching.
+
+### Setup
+
+1. **Browser entry**: call `installDarkMode()` once in your browser client entry. It follows the OS setting or a saved choice via `setTheme()`, syncs an HTTP cookie (`volt-theme`) by default, and maintains the `dark` class across Remix frame navigations:
+```ts
+import { installDarkMode } from 'volt-preline/dark-mode'
+
+installDarkMode()
+```
+
+2. **Server-Side Rendering**: read the theme cookie so the initial HTML is rendered with `class="dark"` immediately, preventing theme flash:
+```tsx
+import { readThemeCookie, themeHtmlProps, darkModeHeadScript } from 'volt-preline/dark-mode'
+
+export function Document({ request, children }: { request: Request; children: React.ReactNode }) {
+  let theme = readThemeCookie(request.headers.get('cookie')) // 'light' | 'dark' | null
+
+  return (
+    <html lang="en" {...themeHtmlProps(theme)}>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: darkModeHeadScript() }} />
+      </head>
+      <body>{children}</body>
+    </html>
+  )
+}
+```
+
+3. **CSS Color-Scheme Rule**: In your `app/styles/app.css`, declare `html.dark { color-scheme: dark; }`:
+```css
+/* app/styles/app.css */
+html.dark {
+  color-scheme: dark;
+}
+```
+*Why?* Remix UI frame navigations diff and patch DOM attributes on `<html>`, which can strip inline `style="color-scheme: ..."` attributes temporarily. The CSS rule ensures form controls and scrollbars never flash light during DOM updates.
+
+4. **Switching Themes**:
+```ts
+import { setTheme } from 'volt-preline/dark-mode'
+
+setTheme('dark')   // saves to localStorage AND writes cookie
+setTheme('light')  // saves to localStorage AND writes cookie
+setTheme('system') // clears localStorage AND expires cookie
+```
 
 ## Develop
 ```sh
