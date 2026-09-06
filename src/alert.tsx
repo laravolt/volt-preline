@@ -31,10 +31,16 @@ const sizes = {
 }
 
 export type AlertSize = keyof typeof sizes
-export type AlertContextValue = ModalContextValue
+export type AlertAlign = 'start' | 'center'
+
+export interface AlertContextValue extends ModalContextValue {
+  align?: AlertAlign
+}
 
 export interface AlertProps extends ElementProps {
   size?: AlertSize
+  /** Text and action alignment: 'start' (default) or 'center'. */
+  align?: AlertAlign
   /** Whether the alert is shown. Toggle from app state. */
   open?: boolean
   /** Called with `false` when the user asks to close (Escape, backdrop click, native close). */
@@ -45,7 +51,11 @@ export interface AlertProps extends ElementProps {
 }
 
 export function Alert(handle: Handle<AlertProps, AlertContextValue>) {
-  let ids: AlertContextValue = { titleId: `${handle.id}-title`, descriptionId: `${handle.id}-description` }
+  let ids: AlertContextValue = {
+    titleId: `${handle.id}-title`,
+    descriptionId: `${handle.id}-description`,
+    align: handle.props.align ?? 'start',
+  }
   handle.context.set(ids)
 
   let modal = createModal(handle, ids, () => ({
@@ -59,6 +69,7 @@ export function Alert(handle: Handle<AlertProps, AlertContextValue>) {
     let { className, rest } = splitProps(handle.props)
     let {
       size = 'md',
+      align = 'start',
       open: _open,
       onClose: _onClose,
       'aria-labelledby': _labelledBy,
@@ -67,6 +78,7 @@ export function Alert(handle: Handle<AlertProps, AlertContextValue>) {
       ...dialogProps
     } = rest
 
+    ids.align = align
     modal.afterRender()
 
     return (
@@ -87,6 +99,7 @@ export function Alert(handle: Handle<AlertProps, AlertContextValue>) {
               className,
               'w-full',
               sizes[size as AlertSize],
+              align === 'center' ? 'text-center' : 'text-start',
               'flex flex-col rounded-xl border border-overlay-line bg-overlay p-4 shadow-2xs sm:p-5',
               'scale-95 opacity-0 transition-all transition-discrete duration-300 ease-out',
               'group-open:scale-100 group-open:opacity-100 starting:group-open:scale-95 starting:group-open:opacity-0',
@@ -159,21 +172,26 @@ export function AlertBody(handle: Handle<AlertBodyProps>) {
 }
 
 export interface AlertActionsProps extends ElementProps {
+  align?: AlertAlign
   className?: string
   class?: string
   children?: RemixNode
 }
 
 export function AlertActions(handle: Handle<AlertActionsProps>) {
+  let ctx = handle.context.get(Alert)
   return () => {
     let { className, rest } = splitProps(handle.props)
-    let { children, ...props } = rest
+    let { align = ctx?.align ?? 'start', children, ...props } = rest
     return (
       <div
         {...props}
         className={cx(
           className,
-          'mt-5 flex flex-col-reverse items-center gap-2 *:w-full sm:flex-row sm:justify-end sm:*:w-auto',
+          'mt-5 flex flex-col-reverse items-center gap-2 *:w-full',
+          align === 'center'
+            ? 'sm:flex-row sm:justify-center sm:*:w-auto'
+            : 'sm:flex-row sm:justify-end sm:*:w-auto',
         )}
       >
         {children}

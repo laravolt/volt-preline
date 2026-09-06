@@ -26,9 +26,14 @@ declare const sizes: {
     '5xl': string;
 };
 export type AlertSize = keyof typeof sizes;
-export type AlertContextValue = ModalContextValue;
+export type AlertAlign = 'start' | 'center';
+export interface AlertContextValue extends ModalContextValue {
+    align?: AlertAlign;
+}
 export interface AlertProps extends ElementProps {
     size?: AlertSize;
+    /** Text and action alignment: 'start' (default) or 'center'. */
+    align?: AlertAlign;
     /** Whether the alert is shown. Toggle from app state. */
     open?: boolean;
     /** Called with `false` when the user asks to close (Escape, backdrop click, native close). */
@@ -59,6 +64,7 @@ export interface AlertBodyProps extends ElementProps {
 }
 export declare function AlertBody(handle: Handle<AlertBodyProps>): () => import("remix/ui").RemixElement;
 export interface AlertActionsProps extends ElementProps {
+    align?: AlertAlign;
     className?: string;
     class?: string;
     children?: RemixNode;
