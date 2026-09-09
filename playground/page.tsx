@@ -1,9 +1,11 @@
 import type { Handle, RemixNode } from 'remix/ui'
+import { ImportMap } from 'remix/ui/server'
 
 import { darkModeHeadScript } from '../src/dark-mode.ts'
-import { entryHref, entryPreloads } from './assets.ts'
+import { scriptEntry } from './assets.ts'
 
 export function Document(handle: Handle<{ title: string; children?: RemixNode }>) {
+  let { href, importMap, preloads } = scriptEntry
   return () => (
     <html lang="en" className="h-full">
       <head>
@@ -15,10 +17,11 @@ export function Document(handle: Handle<{ title: string; children?: RemixNode }>
         <script>{darkModeHeadScript()}</script>
         <title>{handle.props.title}</title>
         <link rel="stylesheet" href="/app.css" />
-        {entryPreloads.map((href) => (
-          <link key={href} rel="modulepreload" href={href} />
+        <ImportMap value={importMap} />
+        {preloads.map((preloadHref) => (
+          <link key={preloadHref} rel="modulepreload" href={preloadHref} />
         ))}
-        <script type="module" src={entryHref}></script>
+        <script type="module" src={href}></script>
       </head>
       <body className="h-full bg-background text-foreground antialiased">
         {handle.props.children}

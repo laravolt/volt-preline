@@ -10,5 +10,4 @@ export const assets = createAssetServer({
   sourceMaps: 'external',
 })
 
-export const entryHref = await assets.getHref('playground/entry.ts')
-export const entryPreloads = await assets.getPreloads('playground/entry.ts')
+export const scriptEntry = await assets.getScriptEntry('playground/entry.ts')
