@@ -13,7 +13,7 @@
  *
  * Hydration: no client entry is needed for form posting; `RadioGroup.onChange` needs one.
  */
-import { type ElementProps, type Handle, type RemixNode } from 'remix/ui';
+import { type ElementProps, type Handle, type RemixNode } from 'remix/component';
 import { choiceColors } from './checkbox.tsx';
 import { type FieldContextValue } from './fieldset.tsx';
 export type RadioGroupContextValue = {
@@ -36,7 +36,7 @@ export type RadioGroupProps = {
     class?: string;
     children?: RemixNode;
 } & ElementProps;
-export declare function RadioGroup(handle: Handle<RadioGroupProps, RadioGroupContextValue>): () => import("remix/ui").RemixElement;
+export declare function RadioGroup(handle: Handle<RadioGroupProps, RadioGroupContextValue>): () => import("remix/component").RemixElement;
 export type RadioFieldProps = {
     id?: string;
     disabled?: boolean;
@@ -44,7 +44,7 @@ export type RadioFieldProps = {
     class?: string;
     children?: RemixNode;
 } & ElementProps;
-export declare function RadioField(handle: Handle<RadioFieldProps, FieldContextValue>): () => import("remix/ui").RemixElement;
+export declare function RadioField(handle: Handle<RadioFieldProps, FieldContextValue>): () => import("remix/component").RemixElement;
 export type RadioColor = keyof typeof choiceColors;
 export type RadioProps = {
     id?: string;
@@ -61,4 +61,4 @@ export type RadioProps = {
     className?: string;
     class?: string;
 } & ElementProps;
-export declare function Radio(handle: Handle<RadioProps>): () => import("remix/ui").RemixElement;
+export declare function Radio(handle: Handle<RadioProps>): () => import("remix/component").RemixElement;

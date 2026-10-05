@@ -1,5 +1,5 @@
 /**
- * `Combobox` — Preline "ComboBox" styling on top of `remix/ui/combobox/primitives`.
+ * `Combobox` — Preline "ComboBox" styling on top of `@remix-run/ui/combobox`.
  *
  * API parity with `volt-catalyst/combobox`: same exports (`Combobox`, `ComboboxOption`,
  * `ComboboxLabel`, `ComboboxDescription`) and props: `options`, `displayValue(option)`, optional
@@ -32,10 +32,10 @@
  * Hydration: `Combobox` is not a client entry. Place it inside an app `clientEntry` for typing /
  * keyboard / popover behavior; it server-renders as a plain text input + hidden input.
  */
-import { Fragment, on, ref, type ElementProps, type Handle, type RemixNode } from 'remix/ui'
-import * as combobox from 'remix/ui/combobox/primitives'
-import * as listbox from 'remix/ui/listbox'
-import * as popover from 'remix/ui/popover'
+import { Fragment, on, ref, type ElementProps, type Handle, type RemixNode } from 'remix/component'
+import * as combobox from '@remix-run/ui/combobox'
+import * as listbox from '@remix-run/ui/listbox'
+import * as popover from '@remix-run/ui/popover'
 
 import { controlAttrsFromField } from './fieldset.tsx'
 import { cx, splitProps } from './utils.ts'

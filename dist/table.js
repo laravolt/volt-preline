@@ -1,4 +1,4 @@
-import { jsx as _jsx, jsxs as _jsxs } from "remix/ui/jsx-runtime";
+import { jsx as _jsx, jsxs as _jsxs } from "remix/component/jsx-runtime";
 import { Link } from "./link.js";
 import { cx, splitProps } from "./utils.js";
 const defaultTableContext = { bleed: false, dense: false, grid: false, striped: false };

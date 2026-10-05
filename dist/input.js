@@ -1,4 +1,4 @@
-import { jsx as _jsx } from "remix/ui/jsx-runtime";
+import { jsx as _jsx } from "remix/component/jsx-runtime";
 /**
  * `input.tsx` — Preline-styled text input with the volt-catalyst API.
  *
@@ -18,7 +18,7 @@ import { jsx as _jsx } from "remix/ui/jsx-runtime";
  *
  * Hydration: static markup; no client entry required unless `onChange`/`onInput` are used.
  */
-import { on } from 'remix/ui';
+import { on } from 'remix/component';
 import { controlAttrsFromField } from "./fieldset.js";
 import { cx, splitProps } from "./utils.js";
 export function InputGroup(handle) {

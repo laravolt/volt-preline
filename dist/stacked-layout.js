@@ -1,4 +1,4 @@
-import { jsx as _jsx, Fragment as _Fragment, jsxs as _jsxs } from "remix/ui/jsx-runtime";
+import { jsx as _jsx, Fragment as _Fragment, jsxs as _jsxs } from "remix/component/jsx-runtime";
 /**
  * `StackedLayout` for volt-preline (API parity with volt-catalyst `stacked-layout.tsx`: same
  * `navbar`/`sidebar`/`children` props and drawer behavior; Preline navbar-on-top layout).
@@ -12,7 +12,7 @@ import { jsx as _jsx, Fragment as _Fragment, jsxs as _jsxs } from "remix/ui/jsx-
  * open/close buttons are wired. Keep `StackedLayoutContent` OUTSIDE that client entry: page content
  * passed as island `children` is serialized and loses every `mix`.
  */
-import { on, ref } from 'remix/ui';
+import { on, ref } from 'remix/component';
 import { NavbarItem } from "./navbar.js";
 import { CloseMenuIcon, OpenMenuIcon, mobileSidebarDialogClasses, mobileSidebarPanelClasses } from "./sidebar-layout.js";
 import { cx, splitProps } from "./utils.js";

@@ -12,7 +12,7 @@
  *
  * Hydration: none required — plain anchors and buttons.
  */
-import type { ElementProps, Handle, RemixNode } from 'remix/ui'
+import type { ElementProps, Handle, RemixNode } from 'remix/component'
 
 import { Button } from './button.tsx'
 import { cx, splitProps } from './utils.ts'

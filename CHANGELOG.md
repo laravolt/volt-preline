@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+- Remix 3.0.0: `remix/ui` was split upstream. Components import the runtime from `remix/component`
+  (JSX via `remix/component/jsx-runtime`) and the primitives from `@remix-run/ui` 0.12.1, now a
+  direct dependency (`menu`, `select`, `combobox` lost their `/primitives` suffix). Peer dependency
+  is `remix ^3.0.0`. Apps that serve volt-preline through `createAssetServer` must add
+  `@remix-run/ui` and `@remix-run/component` to `allowPackages` (the playground does).
+
 ## 0.2.0 — 2026-09-06
 - `dark-mode`: `setTheme()` and `installDarkMode()` now also sync the preference to a `volt-theme`
   cookie (configurable/disable-able via `cookie` option) so the server can render

@@ -12,19 +12,19 @@
  *
  * Hydration: none required.
  */
-import type { ElementProps, Handle, RemixNode } from 'remix/ui';
+import type { ElementProps, Handle, RemixNode } from 'remix/component';
 export type TextProps = {
     className?: string;
     class?: string;
     children?: RemixNode;
 } & ElementProps;
-export declare function Text(handle: Handle<TextProps>): () => import("remix/ui").RemixElement;
+export declare function Text(handle: Handle<TextProps>): () => import("remix/component").RemixElement;
 export type TextLinkProps = {
     href: string;
     className?: string;
     class?: string;
     children?: RemixNode;
 } & ElementProps;
-export declare function TextLink(handle: Handle<TextLinkProps>): () => import("remix/ui").RemixElement;
-export declare function Strong(handle: Handle<TextProps>): () => import("remix/ui").RemixElement;
-export declare function Code(handle: Handle<TextProps>): () => import("remix/ui").RemixElement;
+export declare function TextLink(handle: Handle<TextLinkProps>): () => import("remix/component").RemixElement;
+export declare function Strong(handle: Handle<TextProps>): () => import("remix/component").RemixElement;
+export declare function Code(handle: Handle<TextProps>): () => import("remix/component").RemixElement;

@@ -14,7 +14,7 @@
  *
  * Hydration: toggle `open` from state inside an app `clientEntry`; the components are not client entries.
  */
-import type { ElementProps, Handle, RemixNode } from 'remix/ui';
+import type { ElementProps, Handle, RemixNode } from 'remix/component';
 import { type ModalContextValue } from './modal.ts';
 declare const sizes: {
     xs: string;
@@ -41,31 +41,31 @@ export interface DialogProps extends ElementProps {
 }
 /** Shared `<dialog>` host reset: fill the viewport, transparent, the panel is laid out by us. */
 export declare const dialogHostClasses: string;
-export declare function Dialog(handle: Handle<DialogProps, DialogContextValue>): () => import("remix/ui").RemixElement;
+export declare function Dialog(handle: Handle<DialogProps, DialogContextValue>): () => import("remix/component").RemixElement;
 export interface DialogTitleProps extends ElementProps {
     id?: string;
     className?: string;
     class?: string;
     children?: RemixNode;
 }
-export declare function DialogTitle(handle: Handle<DialogTitleProps>): () => import("remix/ui").RemixElement;
+export declare function DialogTitle(handle: Handle<DialogTitleProps>): () => import("remix/component").RemixElement;
 export interface DialogDescriptionProps extends ElementProps {
     id?: string;
     className?: string;
     class?: string;
     children?: RemixNode;
 }
-export declare function DialogDescription(handle: Handle<DialogDescriptionProps>): () => import("remix/ui").RemixElement;
+export declare function DialogDescription(handle: Handle<DialogDescriptionProps>): () => import("remix/component").RemixElement;
 export interface DialogBodyProps extends ElementProps {
     className?: string;
     class?: string;
     children?: RemixNode;
 }
-export declare function DialogBody(handle: Handle<DialogBodyProps>): () => import("remix/ui").RemixElement;
+export declare function DialogBody(handle: Handle<DialogBodyProps>): () => import("remix/component").RemixElement;
 export interface DialogActionsProps extends ElementProps {
     className?: string;
     class?: string;
     children?: RemixNode;
 }
-export declare function DialogActions(handle: Handle<DialogActionsProps>): () => import("remix/ui").RemixElement;
+export declare function DialogActions(handle: Handle<DialogActionsProps>): () => import("remix/component").RemixElement;
 export {};

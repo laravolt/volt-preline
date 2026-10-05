@@ -12,7 +12,7 @@
  *
  * Hydration: static markup; no client entry required unless `onChange`/`onInput` are used.
  */
-import { on, type ElementProps, type Handle } from 'remix/ui'
+import { on, type ElementProps, type Handle } from 'remix/component'
 
 import { controlAttrsFromField } from './fieldset.tsx'
 import { inputClasses } from './input.tsx'

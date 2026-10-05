@@ -1,6 +1,6 @@
-import { jsx as _jsx, jsxs as _jsxs } from "remix/ui/jsx-runtime";
+import { jsx as _jsx, jsxs as _jsxs } from "remix/component/jsx-runtime";
 /**
- * `Listbox` — Preline "Advanced Select" styling on top of `remix/ui/select/primitives` (which
+ * `Listbox` — Preline "Advanced Select" styling on top of `@remix-run/ui/select` (which
  * composes `listbox` + `popover` for the button-triggered "custom select" pattern).
  *
  * API parity with `volt-catalyst/listbox`: same exports (`Listbox`, `ListboxOption`,
@@ -29,9 +29,9 @@ import { jsx as _jsx, jsxs as _jsxs } from "remix/ui/jsx-runtime";
  * hydrated tree) for the popover/keyboard behavior; it server-renders as a plain button + hidden
  * input.
  */
-import { on } from 'remix/ui';
-import * as popover from 'remix/ui/popover';
-import * as select from 'remix/ui/select/primitives';
+import { on } from 'remix/component';
+import * as popover from '@remix-run/ui/popover';
+import * as select from '@remix-run/ui/select';
 import { controlAttrsFromField } from "./fieldset.js";
 import { cx, splitProps } from "./utils.js";
 /** Text content of a Remix node tree (used for typeahead labels and the select's default label). */

@@ -1,5 +1,5 @@
-import { clientEntry, on, type Handle } from 'remix/ui'
-import { onMenuSelect } from 'remix/ui/menu/primitives'
+import { clientEntry, on, type Handle } from 'remix/component'
+import { onMenuSelect } from '@remix-run/ui/menu'
 
 import { Alert, AlertActions, AlertBody, AlertDescription, AlertTitle } from '../../src/alert.tsx'
 import { Button } from '../../src/button.tsx'

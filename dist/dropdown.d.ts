@@ -1,5 +1,5 @@
 /**
- * `Dropdown` — Preline "Dropdown" styling on top of `remix/ui/menu/primitives` (no `preline.js`).
+ * `Dropdown` — Preline "Dropdown" styling on top of `@remix-run/ui/menu` (no `preline.js`).
  *
  * API parity with `volt-catalyst/dropdown`: `Dropdown` (`label`, `onSelect(event)`), `DropdownButton`
  * (`as`, defaults to `Button`), `DropdownMenu` (`anchor="bottom end"` strings), `DropdownItem` (`href`,
@@ -10,7 +10,7 @@
  * - `Dropdown` renders `menu.Context` (no wrapper element) and exposes `onSelect` through context; the
  *   `MenuSelectEvent` also bubbles from the item so ancestors can listen with `onMenuSelect(...)`.
  * - `DropdownButton` applies `menu.trigger()`; the host component must forward `mix` to its root element.
- * - `DropdownMenu` is a native `popover="manual"` surface positioned by `remix/ui/anchor`. The `anchor`
+ * - `DropdownMenu` is a native `popover="manual"` surface positioned by `@remix-run/ui/anchor`. The `anchor`
  *   prop is mapped to an anchor placement (`'bottom end'` → `bottom-end`, gap 8px — Preline's `mt-2`)
  *   and swapped into the popover context right before the surface opens. The resolved placement (after
  *   viewport flipping) is written to `data-anchor-placement`.
@@ -22,8 +22,8 @@
  *
  * Hydration: interactive only inside an app `clientEntry`; the components are not client entries.
  */
-import { type Dispatched, type ElementProps, type ElementType, type Handle, type RemixNode } from 'remix/ui';
-import * as menu from 'remix/ui/menu/primitives';
+import { type Dispatched, type ElementProps, type ElementType, type Handle, type RemixNode } from 'remix/component';
+import * as menu from '@remix-run/ui/menu';
 export type DropdownAnchor = 'top' | 'bottom' | 'left' | 'right' | 'top start' | 'top end' | 'bottom start' | 'bottom end' | 'left start' | 'left end' | 'right start' | 'right end';
 export type DropdownSelectEvent = Dispatched<menu.MenuSelectEvent, HTMLElement>;
 export interface DropdownProps {
@@ -36,7 +36,7 @@ export interface DropdownProps {
 interface DropdownContextValue {
     readonly onSelect: DropdownProps['onSelect'];
 }
-export declare function Dropdown(handle: Handle<DropdownProps, DropdownContextValue>): () => import("remix/ui").RemixElement;
+export declare function Dropdown(handle: Handle<DropdownProps, DropdownContextValue>): () => import("remix/component").RemixElement;
 export interface DropdownButtonProps extends ElementProps {
     /** Component or tag to render; defaults to `Button`. Must forward `mix` to its root element. */
     as?: ElementType;
@@ -44,14 +44,14 @@ export interface DropdownButtonProps extends ElementProps {
     class?: string;
     children?: RemixNode;
 }
-export declare function DropdownButton(handle: Handle<DropdownButtonProps>): () => import("remix/ui").RemixElement;
+export declare function DropdownButton(handle: Handle<DropdownButtonProps>): () => import("remix/component").RemixElement;
 export interface DropdownMenuProps extends ElementProps {
     anchor?: DropdownAnchor;
     className?: string;
     class?: string;
     children?: RemixNode;
 }
-export declare function DropdownMenu(handle: Handle<DropdownMenuProps>): () => import("remix/ui").RemixElement;
+export declare function DropdownMenu(handle: Handle<DropdownMenuProps>): () => import("remix/component").RemixElement;
 export interface DropdownItemProps extends ElementProps {
     /** Renders an `<a href>` that navigates on select. */
     href?: string;
@@ -70,13 +70,13 @@ interface DropdownItemContextValue {
     descriptionId: string;
     shortcutId: string;
 }
-export declare function DropdownItem(handle: Handle<DropdownItemProps, DropdownItemContextValue>): () => import("remix/ui").RemixElement;
+export declare function DropdownItem(handle: Handle<DropdownItemProps, DropdownItemContextValue>): () => import("remix/component").RemixElement;
 export interface DropdownHeaderProps extends ElementProps {
     className?: string;
     class?: string;
     children?: RemixNode;
 }
-export declare function DropdownHeader(handle: Handle<DropdownHeaderProps>): () => import("remix/ui").RemixElement;
+export declare function DropdownHeader(handle: Handle<DropdownHeaderProps>): () => import("remix/component").RemixElement;
 export interface DropdownSectionProps extends ElementProps {
     className?: string;
     class?: string;
@@ -85,37 +85,37 @@ export interface DropdownSectionProps extends ElementProps {
 interface DropdownSectionContextValue {
     headingId: string;
 }
-export declare function DropdownSection(handle: Handle<DropdownSectionProps, DropdownSectionContextValue>): () => import("remix/ui").RemixElement;
+export declare function DropdownSection(handle: Handle<DropdownSectionProps, DropdownSectionContextValue>): () => import("remix/component").RemixElement;
 export interface DropdownHeadingProps extends ElementProps {
     id?: string;
     className?: string;
     class?: string;
     children?: RemixNode;
 }
-export declare function DropdownHeading(handle: Handle<DropdownHeadingProps>): () => import("remix/ui").RemixElement;
+export declare function DropdownHeading(handle: Handle<DropdownHeadingProps>): () => import("remix/component").RemixElement;
 export interface DropdownDividerProps extends ElementProps {
     className?: string;
     class?: string;
 }
-export declare function DropdownDivider(handle: Handle<DropdownDividerProps>): () => import("remix/ui").RemixElement;
+export declare function DropdownDivider(handle: Handle<DropdownDividerProps>): () => import("remix/component").RemixElement;
 export interface DropdownLabelProps extends ElementProps {
     className?: string;
     class?: string;
     children?: RemixNode;
 }
-export declare function DropdownLabel(handle: Handle<DropdownLabelProps>): () => import("remix/ui").RemixElement;
+export declare function DropdownLabel(handle: Handle<DropdownLabelProps>): () => import("remix/component").RemixElement;
 export interface DropdownDescriptionProps extends ElementProps {
     id?: string;
     className?: string;
     class?: string;
     children?: RemixNode;
 }
-export declare function DropdownDescription(handle: Handle<DropdownDescriptionProps>): () => import("remix/ui").RemixElement;
+export declare function DropdownDescription(handle: Handle<DropdownDescriptionProps>): () => import("remix/component").RemixElement;
 export interface DropdownShortcutProps extends ElementProps {
     keys: string | string[];
     id?: string;
     className?: string;
     class?: string;
 }
-export declare function DropdownShortcut(handle: Handle<DropdownShortcutProps>): () => import("remix/ui").RemixElement;
+export declare function DropdownShortcut(handle: Handle<DropdownShortcutProps>): () => import("remix/component").RemixElement;
 export {};

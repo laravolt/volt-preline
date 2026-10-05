@@ -1,5 +1,5 @@
 /** Registry of kitchen-sink sections. Each file exports a `Section` component (a clientEntry island). */
-import type { Handle, RemixNode } from 'remix/ui'
+import type { Handle, RemixNode } from 'remix/component'
 
 type Component<P> = (handle: Handle<P>) => () => RemixNode
 

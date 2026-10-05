@@ -8,7 +8,7 @@
  *
  * Hydration: none required.
  */
-import type { ElementProps, Handle } from 'remix/ui'
+import type { ElementProps, Handle } from 'remix/component'
 
 import { Badge } from './badge.tsx'
 import { cx, splitProps } from './utils.ts'

@@ -12,7 +12,7 @@
  *
  * Hydration: static markup; no client entry required unless `onChange`/`onInput` are used.
  */
-import { type ElementProps, type Handle } from 'remix/ui';
+import { type ElementProps, type Handle } from 'remix/component';
 export type TextareaEventHandler = (event: Event & {
     currentTarget: HTMLTextAreaElement;
 }) => void;
@@ -33,4 +33,4 @@ export type TextareaProps = {
     className?: string;
     class?: string;
 } & ElementProps;
-export declare function Textarea(handle: Handle<TextareaProps>): () => import("remix/ui").RemixElement;
+export declare function Textarea(handle: Handle<TextareaProps>): () => import("remix/component").RemixElement;

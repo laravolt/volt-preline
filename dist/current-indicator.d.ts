@@ -6,7 +6,7 @@
  * Mechanics:
  * - `NavbarSection` / `SidebarSection` create a `LayoutGroup` and expose it through `handle.context`.
  * - The current item renders one keyed `<span data-slot="current-indicator">` with `animateLayout()`
- *   from `remix/ui/animation`, which FLIP-animates the span whenever its own item moves or resizes.
+ *   from `@remix-run/ui/animation`, which FLIP-animates the span whenever its own item moves or resizes.
  * - When `current` jumps to a *different* item the span is a new element in a new parent, so
  *   `animateLayout` alone cannot connect the two. The group therefore records the live marker's box
  *   at the start of every section render (before the DOM is patched) and the freshly inserted span
@@ -17,7 +17,7 @@
  *
  * Server rendering: the span is plain markup; boxes are only measured in the browser.
  */
-import { type Handle } from 'remix/ui';
+import { type Handle } from 'remix/component';
 /** Context value provided by a section (the equivalent of Catalyst's `LayoutGroup`). */
 export declare class LayoutGroup {
     /** The marker element currently mounted in this group, if any. */
@@ -32,4 +32,4 @@ export type CurrentIndicatorProps = {
     group: LayoutGroup | undefined;
     className: string;
 };
-export declare function CurrentIndicator(handle: Handle<CurrentIndicatorProps>): () => import("remix/ui").RemixElement;
+export declare function CurrentIndicator(handle: Handle<CurrentIndicatorProps>): () => import("remix/component").RemixElement;

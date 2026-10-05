@@ -8,7 +8,7 @@ import { Button } from 'volt-preline/button'      // or 'volt-catalyst/button'
 import { Field, Label } from 'volt-preline/fieldset'
 ```
 
-Interactions (dropdown, listbox, combobox, dialog, drawers) are built on `remix/ui` primitives;
+Interactions (dropdown, listbox, combobox, dialog, drawers) are built on `remix/component` primitives;
 `preline.js` is not needed. Styling uses Preline's semantic tokens so one `theme.css` re-skins the app.
 
 ## Setup
@@ -35,7 +35,7 @@ installDarkMode()
 
 2. **Server-Side Rendering**: read the theme cookie so the initial HTML is rendered with `className="dark"` immediately, preventing theme flash:
 ```tsx
-import type { Handle, RemixNode } from 'remix/ui'
+import type { Handle, RemixNode } from 'remix/component'
 import {
   readThemeCookie,
   themeHtmlProps,
@@ -128,7 +128,7 @@ import { Button } from 'volt-preline/button'
 When selecting from a dataset with >5 options, use `Combobox` inside an island (`clientEntry`). For typed options, instantiate once:
 
 ```tsx
-import { clientEntry, on, type Handle } from 'remix/ui'
+import { clientEntry, on, type Handle } from 'remix/component'
 import {
   Combobox,
   ComboboxOption,

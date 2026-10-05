@@ -11,7 +11,7 @@
  * open/close buttons are wired. Keep `StackedLayoutContent` OUTSIDE that client entry: page content
  * passed as island `children` is serialized and loses every `mix`.
  */
-import { type ElementProps, type Handle, type RemixNode } from 'remix/ui';
+import { type ElementProps, type Handle, type RemixNode } from 'remix/component';
 export type StackedLayoutChromeProps = {
     navbar: RemixNode;
     sidebar: RemixNode;
@@ -22,11 +22,11 @@ export type StackedLayoutRootProps = {
     children?: RemixNode;
 } & ElementProps;
 /** Outer flex column (`min-h-svh`). Server-renderable; wrap `StackedLayoutChrome` + `StackedLayoutContent`. */
-export declare function StackedLayoutRoot(handle: Handle<StackedLayoutRootProps>): () => import("remix/ui").RemixElement;
+export declare function StackedLayoutRoot(handle: Handle<StackedLayoutRootProps>): () => import("remix/component").RemixElement;
 /** The `<main>` content well. Server-renderable, so page content (forms, nested client entries) keeps its mixins. */
 export declare function StackedLayoutContent(handle: Handle<{
     children?: RemixNode;
-}>): () => import("remix/ui").RemixElement;
+}>): () => import("remix/component").RemixElement;
 export type StackedLayoutProps = {
     navbar: RemixNode;
     sidebar: RemixNode;
@@ -34,11 +34,11 @@ export type StackedLayoutProps = {
     class?: string;
     children?: RemixNode;
 } & ElementProps;
-export declare function StackedLayoutChrome(handle: Handle<StackedLayoutChromeProps>): () => import("remix/ui").RemixElement;
+export declare function StackedLayoutChrome(handle: Handle<StackedLayoutChromeProps>): () => import("remix/component").RemixElement;
 /**
  * Backwards-compatible composition. Prefer `StackedLayoutRoot` + `StackedLayoutChrome` (inside a
  * `clientEntry`) + `StackedLayoutContent` (outside it): passing page content through a client entry's
  * `children` serializes it, which strips `mix` handlers and nested client entries
  * ("Framework invariant: Invalid mix prop" on hydration).
  */
-export declare function StackedLayout(handle: Handle<StackedLayoutProps>): () => import("remix/ui").RemixElement;
+export declare function StackedLayout(handle: Handle<StackedLayoutProps>): () => import("remix/component").RemixElement;

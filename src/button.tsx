@@ -18,7 +18,7 @@
  *
  * Hydration: none required; navigation is a plain anchor enhanced by Remix `run()`.
  */
-import type { ElementProps, Handle, RemixNode } from 'remix/ui'
+import type { ElementProps, Handle, RemixNode } from 'remix/component'
 
 import { Link } from './link.tsx'
 import { cx, splitProps } from './utils.ts'

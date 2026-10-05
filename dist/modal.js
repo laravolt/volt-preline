@@ -13,7 +13,7 @@
  *
  * Hydration: only meaningful inside a client entry; the `<dialog>` stays closed during SSR.
  */
-import { on, ref } from 'remix/ui';
+import { on, ref } from 'remix/component';
 // --- document scroll lock ---------------------------------------------------------------------
 let openModals = 0;
 let previousOverflow = '';

@@ -8,11 +8,11 @@
  *
  * Hydration: none required.
  */
-import type { ElementProps, Handle, RemixNode } from 'remix/ui';
+import type { ElementProps, Handle, RemixNode } from 'remix/component';
 export type LinkProps = {
     href: string;
     className?: string;
     class?: string;
     children?: RemixNode;
 } & ElementProps;
-export declare function Link(handle: Handle<LinkProps>): () => import("remix/ui").RemixElement;
+export declare function Link(handle: Handle<LinkProps>): () => import("remix/component").RemixElement;

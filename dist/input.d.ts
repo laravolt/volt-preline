@@ -17,13 +17,13 @@
  *
  * Hydration: static markup; no client entry required unless `onChange`/`onInput` are used.
  */
-import { type ElementProps, type Handle, type RemixNode } from 'remix/ui';
+import { type ElementProps, type Handle, type RemixNode } from 'remix/component';
 export type InputGroupProps = {
     className?: string;
     class?: string;
     children?: RemixNode;
 } & ElementProps;
-export declare function InputGroup(handle: Handle<InputGroupProps>): () => import("remix/ui").RemixElement;
+export declare function InputGroup(handle: Handle<InputGroupProps>): () => import("remix/component").RemixElement;
 declare const dateTypes: readonly ["date", "datetime-local", "month", "time", "week"];
 type DateType = (typeof dateTypes)[number];
 export type InputType = 'email' | 'number' | 'password' | 'search' | 'tel' | 'text' | 'url' | DateType;
@@ -49,5 +49,5 @@ export type InputProps = {
 } & ElementProps;
 /** Preline text-input classes shared by `Input` (and reused by `Textarea`/`Select` for consistency). */
 export declare const inputClasses: string[];
-export declare function Input(handle: Handle<InputProps>): () => import("remix/ui").RemixElement;
+export declare function Input(handle: Handle<InputProps>): () => import("remix/component").RemixElement;
 export {};

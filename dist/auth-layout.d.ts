@@ -7,10 +7,10 @@
  *
  * Hydration: none required.
  */
-import type { ElementProps, Handle, RemixNode } from 'remix/ui';
+import type { ElementProps, Handle, RemixNode } from 'remix/component';
 export type AuthLayoutProps = {
     className?: string;
     class?: string;
     children?: RemixNode;
 } & ElementProps;
-export declare function AuthLayout(handle: Handle<AuthLayoutProps>): () => import("remix/ui").RemixElement;
+export declare function AuthLayout(handle: Handle<AuthLayoutProps>): () => import("remix/component").RemixElement;

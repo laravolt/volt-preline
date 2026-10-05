@@ -1,4 +1,4 @@
-import { clientEntry, ref, type Handle } from 'remix/ui'
+import { clientEntry, ref, type Handle } from 'remix/component'
 
 import { Combobox, ComboboxDescription, ComboboxLabel, ComboboxOption } from '../../src/combobox.tsx'
 import { Listbox, ListboxDescription, ListboxLabel, ListboxOption } from '../../src/listbox.tsx'

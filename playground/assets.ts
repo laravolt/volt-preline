@@ -6,7 +6,7 @@ export const assets = createAssetServer({
   rootDir: path.resolve(import.meta.dirname, '..'),
   mounts: { src: 'src', playground: 'playground', npm: 'node_modules' },
   allowFiles: ['src/**', 'playground/**'],
-  allowPackages: ['remix'],
+  allowPackages: ['remix', '@remix-run/ui', '@remix-run/component'],
   sourceMaps: 'external',
 })
 

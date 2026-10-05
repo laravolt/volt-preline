@@ -14,7 +14,7 @@
  *
  * Hydration: toggle `open` from state inside an app `clientEntry`; the components are not client entries.
  */
-import type { ElementProps, Handle, RemixNode } from 'remix/ui'
+import type { ElementProps, Handle, RemixNode } from 'remix/component'
 
 import { createModal, type ModalContextValue } from './modal.ts'
 import { cx, splitProps } from './utils.ts'

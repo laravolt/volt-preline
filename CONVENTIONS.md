@@ -2,7 +2,7 @@
 
 Goal: an MIT component library for Remix UI with the **same component API as `volt-catalyst`**
 (same file names, export names and props) but styled with **Preline UI 5** (free tier) markup and
-semantic tokens. Interactions come from `remix/ui/*` primitives — **`preline.js` is never used**.
+semantic tokens. Interactions come from `@remix-run/ui/*` primitives — **`preline.js` is never used**.
 Apps switch tiers by changing the import package only.
 
 ## Sources of truth
@@ -31,8 +31,8 @@ Apps switch tiers by changing the import package only.
   native inputs styled with `@tailwindcss/forms` + Preline classes (Preline switch = checkbox with
   `relative w-11 h-6 … checked:bg-primary before:translate-x-full` pattern).
 - Overlays: native `<dialog>` for Dialog/Alert (CSS transitions with `open:`/`starting:open:` /
-  `transition-discrete`), `remix/ui/menu/primitives` for Dropdown, `remix/ui/select/primitives` for
-  Listbox, `remix/ui/combobox/primitives` for Combobox, `remix/ui/animation` for the current
+  `transition-discrete`), `@remix-run/ui/menu` for Dropdown, `@remix-run/ui/select` for
+  Listbox, `@remix-run/ui/combobox` for Combobox, `@remix-run/ui/animation` for the current
   indicator. Same props as volt-catalyst (`open`, `onClose`, `anchor`, `onSelect`, `value`,
   `onChange`, `displayValue`, `filter`, `valueKey`, …).
 - rc.1 gotcha: never pass `checked/value/open/selected={undefined}` explicitly on host elements;

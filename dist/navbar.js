@@ -1,4 +1,4 @@
-import { jsx as _jsx, jsxs as _jsxs } from "remix/ui/jsx-runtime";
+import { jsx as _jsx, jsxs as _jsxs } from "remix/component/jsx-runtime";
 import { TouchTarget } from "./button.js";
 import { CurrentIndicator, LayoutGroup } from "./current-indicator.js";
 import { Link } from "./link.js";

@@ -1,4 +1,4 @@
-import { jsx as _jsx } from "remix/ui/jsx-runtime";
+import { jsx as _jsx } from "remix/component/jsx-runtime";
 import { cx, splitProps } from "./utils.js";
 export function Divider(handle) {
     return () => {

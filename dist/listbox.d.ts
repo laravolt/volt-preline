@@ -1,5 +1,5 @@
 /**
- * `Listbox` — Preline "Advanced Select" styling on top of `remix/ui/select/primitives` (which
+ * `Listbox` — Preline "Advanced Select" styling on top of `@remix-run/ui/select` (which
  * composes `listbox` + `popover` for the button-triggered "custom select" pattern).
  *
  * API parity with `volt-catalyst/listbox`: same exports (`Listbox`, `ListboxOption`,
@@ -28,7 +28,7 @@
  * hydrated tree) for the popover/keyboard behavior; it server-renders as a plain button + hidden
  * input.
  */
-import { type ElementProps, type Handle, type RemixElement, type RemixNode } from 'remix/ui';
+import { type ElementProps, type Handle, type RemixElement, type RemixNode } from 'remix/component';
 export type ListboxProps = {
     id?: string;
     name?: string;
