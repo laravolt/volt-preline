@@ -9,7 +9,7 @@
  *
  * Hydration: none required.
  */
-import { type ElementProps, type Handle, type RemixNode } from 'remix/ui';
+import { type ElementProps, type Handle, type RemixNode } from 'remix/component';
 export type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6;
 export type HeadingProps = {
     level?: HeadingLevel;
@@ -17,5 +17,5 @@ export type HeadingProps = {
     class?: string;
     children?: RemixNode;
 } & ElementProps;
-export declare function Heading(handle: Handle<HeadingProps>): () => import("remix/ui").RemixElement;
-export declare function Subheading(handle: Handle<HeadingProps>): () => import("remix/ui").RemixElement;
+export declare function Heading(handle: Handle<HeadingProps>): () => import("remix/component").RemixElement;
+export declare function Subheading(handle: Handle<HeadingProps>): () => import("remix/component").RemixElement;

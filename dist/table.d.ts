@@ -20,7 +20,7 @@
  *
  * Hydration: none required; row links are ordinary anchors enhanced by Remix `run()`.
  */
-import type { ElementProps, Handle, RemixNode } from 'remix/ui';
+import type { ElementProps, Handle, RemixNode } from 'remix/component';
 export type TableResponsive = 'stack';
 export type TableContextValue = {
     bleed: boolean;
@@ -39,14 +39,14 @@ export type TableProps = {
     class?: string;
     children?: RemixNode;
 } & ElementProps;
-export declare function Table(handle: Handle<TableProps, TableContextValue>): () => import("remix/ui").RemixElement;
+export declare function Table(handle: Handle<TableProps, TableContextValue>): () => import("remix/component").RemixElement;
 export type TableSectionProps = {
     className?: string;
     class?: string;
     children?: RemixNode;
 } & ElementProps;
-export declare function TableHead(handle: Handle<TableSectionProps>): () => import("remix/ui").RemixElement;
-export declare function TableBody(handle: Handle<TableSectionProps>): () => import("remix/ui").RemixElement;
+export declare function TableHead(handle: Handle<TableSectionProps>): () => import("remix/component").RemixElement;
+export declare function TableBody(handle: Handle<TableSectionProps>): () => import("remix/component").RemixElement;
 export type TableRowContextValue = {
     href?: string;
     target?: string;
@@ -62,9 +62,9 @@ export type TableRowProps = {
     class?: string;
     children?: RemixNode;
 } & ElementProps;
-export declare function TableRow(handle: Handle<TableRowProps, TableRowContextValue>): () => import("remix/ui").RemixElement;
-export declare function TableHeader(handle: Handle<TableSectionProps>): () => import("remix/ui").RemixElement;
+export declare function TableRow(handle: Handle<TableRowProps, TableRowContextValue>): () => import("remix/component").RemixElement;
+export declare function TableHeader(handle: Handle<TableSectionProps>): () => import("remix/component").RemixElement;
 export type TableCellProps = TableSectionProps & {
     stackedLabel?: string;
 };
-export declare function TableCell(handle: Handle<TableCellProps>): () => import("remix/ui").RemixElement;
+export declare function TableCell(handle: Handle<TableCellProps>): () => import("remix/component").RemixElement;

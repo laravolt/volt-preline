@@ -12,7 +12,7 @@
  *
  * Hydration: toggle `open` from state inside an app `clientEntry`; the components are not client entries.
  */
-import type { ElementProps, Handle, RemixNode } from 'remix/ui';
+import type { ElementProps, Handle, RemixNode } from 'remix/component';
 import { type ModalContextValue } from './modal.ts';
 declare const sizes: {
     xs: string;
@@ -42,32 +42,32 @@ export interface AlertProps extends ElementProps {
     class?: string;
     children?: RemixNode;
 }
-export declare function Alert(handle: Handle<AlertProps, AlertContextValue>): () => import("remix/ui").RemixElement;
+export declare function Alert(handle: Handle<AlertProps, AlertContextValue>): () => import("remix/component").RemixElement;
 export interface AlertTitleProps extends ElementProps {
     id?: string;
     className?: string;
     class?: string;
     children?: RemixNode;
 }
-export declare function AlertTitle(handle: Handle<AlertTitleProps>): () => import("remix/ui").RemixElement;
+export declare function AlertTitle(handle: Handle<AlertTitleProps>): () => import("remix/component").RemixElement;
 export interface AlertDescriptionProps extends ElementProps {
     id?: string;
     className?: string;
     class?: string;
     children?: RemixNode;
 }
-export declare function AlertDescription(handle: Handle<AlertDescriptionProps>): () => import("remix/ui").RemixElement;
+export declare function AlertDescription(handle: Handle<AlertDescriptionProps>): () => import("remix/component").RemixElement;
 export interface AlertBodyProps extends ElementProps {
     className?: string;
     class?: string;
     children?: RemixNode;
 }
-export declare function AlertBody(handle: Handle<AlertBodyProps>): () => import("remix/ui").RemixElement;
+export declare function AlertBody(handle: Handle<AlertBodyProps>): () => import("remix/component").RemixElement;
 export interface AlertActionsProps extends ElementProps {
     align?: AlertAlign;
     className?: string;
     class?: string;
     children?: RemixNode;
 }
-export declare function AlertActions(handle: Handle<AlertActionsProps>): () => import("remix/ui").RemixElement;
+export declare function AlertActions(handle: Handle<AlertActionsProps>): () => import("remix/component").RemixElement;
 export {};

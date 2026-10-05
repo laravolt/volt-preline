@@ -15,7 +15,7 @@
  *
  * Hydration: no client entry is needed for form posting; `onChange` needs one.
  */
-import { on, type ElementProps, type Handle, type RemixNode } from 'remix/ui'
+import { on, type ElementProps, type Handle, type RemixNode } from 'remix/component'
 
 import { controlAttrsFromField, registerFieldProvider, type FieldContextValue } from './fieldset.tsx'
 import { cx, splitProps } from './utils.ts'

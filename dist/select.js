@@ -1,4 +1,4 @@
-import { jsx as _jsx, jsxs as _jsxs } from "remix/ui/jsx-runtime";
+import { jsx as _jsx, jsxs as _jsxs } from "remix/component/jsx-runtime";
 /**
  * `select.tsx` — Preline-styled native select with the volt-catalyst API.
  *
@@ -17,7 +17,7 @@ import { jsx as _jsx, jsxs as _jsxs } from "remix/ui/jsx-runtime";
  *
  * Hydration: static markup; no client entry required unless `onChange` is used.
  */
-import { on } from 'remix/ui';
+import { on } from 'remix/component';
 import { controlAttrsFromField } from "./fieldset.js";
 import { cx, splitProps } from "./utils.js";
 function isElement(node) {

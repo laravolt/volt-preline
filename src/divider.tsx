@@ -7,7 +7,7 @@
  *
  * Hydration: none required.
  */
-import type { ElementProps, Handle } from 'remix/ui'
+import type { ElementProps, Handle } from 'remix/component'
 
 import { cx, splitProps } from './utils.ts'
 

@@ -16,7 +16,7 @@
  *
  * Hydration: static markup; no client entry required unless `onChange` is used.
  */
-import { type ElementProps, type Handle, type RemixElement, type RemixNode } from 'remix/ui';
+import { type ElementProps, type Handle, type RemixElement, type RemixNode } from 'remix/component';
 export type SelectEventHandler = (event: Event & {
     currentTarget: HTMLSelectElement;
 }) => void;

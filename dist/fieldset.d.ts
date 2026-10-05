@@ -20,7 +20,7 @@
  *
  * Hydration: static markup; no client entry required.
  */
-import type { ElementProps, Handle, RemixNode } from 'remix/ui';
+import type { ElementProps, Handle, RemixNode } from 'remix/component';
 export type FieldContextValue = {
     controlId: string;
     descriptionId: string;
@@ -51,19 +51,19 @@ export type FieldsetProps = {
     class?: string;
     children?: RemixNode;
 } & ElementProps;
-export declare function Fieldset(handle: Handle<FieldsetProps, FieldsetContextValue>): () => import("remix/ui").RemixElement;
+export declare function Fieldset(handle: Handle<FieldsetProps, FieldsetContextValue>): () => import("remix/component").RemixElement;
 export type LegendProps = {
     className?: string;
     class?: string;
     children?: RemixNode;
 } & ElementProps;
-export declare function Legend(handle: Handle<LegendProps>): () => import("remix/ui").RemixElement;
+export declare function Legend(handle: Handle<LegendProps>): () => import("remix/component").RemixElement;
 export type FieldGroupProps = {
     className?: string;
     class?: string;
     children?: RemixNode;
 } & ElementProps;
-export declare function FieldGroup(handle: Handle<FieldGroupProps>): () => import("remix/ui").RemixElement;
+export declare function FieldGroup(handle: Handle<FieldGroupProps>): () => import("remix/component").RemixElement;
 export type FieldProps = {
     /** Id used for the control; description/error ids derive from it. Defaults to `handle.id`. */
     id?: string;
@@ -72,21 +72,21 @@ export type FieldProps = {
     class?: string;
     children?: RemixNode;
 } & ElementProps;
-export declare function Field(handle: Handle<FieldProps, FieldContextValue>): () => import("remix/ui").RemixElement;
+export declare function Field(handle: Handle<FieldProps, FieldContextValue>): () => import("remix/component").RemixElement;
 export type LabelProps = {
     htmlFor?: string;
     className?: string;
     class?: string;
     children?: RemixNode;
 } & ElementProps;
-export declare function Label(handle: Handle<LabelProps>): () => import("remix/ui").RemixElement;
+export declare function Label(handle: Handle<LabelProps>): () => import("remix/component").RemixElement;
 export type DescriptionProps = {
     id?: string;
     className?: string;
     class?: string;
     children?: RemixNode;
 } & ElementProps;
-export declare function Description(handle: Handle<DescriptionProps>): () => import("remix/ui").RemixElement;
+export declare function Description(handle: Handle<DescriptionProps>): () => import("remix/component").RemixElement;
 export type ErrorMessageProps = DescriptionProps;
-export declare function ErrorMessage(handle: Handle<ErrorMessageProps>): () => import("remix/ui").RemixElement;
+export declare function ErrorMessage(handle: Handle<ErrorMessageProps>): () => import("remix/component").RemixElement;
 export {};

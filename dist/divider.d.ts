@@ -7,10 +7,10 @@
  *
  * Hydration: none required.
  */
-import type { ElementProps, Handle } from 'remix/ui';
+import type { ElementProps, Handle } from 'remix/component';
 export type DividerProps = {
     soft?: boolean;
     className?: string;
     class?: string;
 } & ElementProps;
-export declare function Divider(handle: Handle<DividerProps>): () => import("remix/ui").RemixElement;
+export declare function Divider(handle: Handle<DividerProps>): () => import("remix/component").RemixElement;

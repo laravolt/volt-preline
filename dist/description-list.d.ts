@@ -11,12 +11,12 @@
  *
  * Hydration: none required.
  */
-import type { ElementProps, Handle, RemixNode } from 'remix/ui';
+import type { ElementProps, Handle, RemixNode } from 'remix/component';
 export type DescriptionListProps = {
     className?: string;
     class?: string;
     children?: RemixNode;
 } & ElementProps;
-export declare function DescriptionList(handle: Handle<DescriptionListProps>): () => import("remix/ui").RemixElement;
-export declare function DescriptionTerm(handle: Handle<DescriptionListProps>): () => import("remix/ui").RemixElement;
-export declare function DescriptionDetails(handle: Handle<DescriptionListProps>): () => import("remix/ui").RemixElement;
+export declare function DescriptionList(handle: Handle<DescriptionListProps>): () => import("remix/component").RemixElement;
+export declare function DescriptionTerm(handle: Handle<DescriptionListProps>): () => import("remix/component").RemixElement;
+export declare function DescriptionDetails(handle: Handle<DescriptionListProps>): () => import("remix/component").RemixElement;

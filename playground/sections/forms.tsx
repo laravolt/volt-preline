@@ -1,4 +1,4 @@
-import { clientEntry, type Handle } from 'remix/ui'
+import { clientEntry, type Handle } from 'remix/component'
 
 import { Checkbox, CheckboxField, CheckboxGroup } from '../../src/checkbox.tsx'
 import { Description, ErrorMessage, Field, FieldGroup, Fieldset, Label, Legend } from '../../src/fieldset.tsx'

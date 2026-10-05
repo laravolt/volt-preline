@@ -14,7 +14,7 @@
  * Hydration: markup is server-renderable; the animated marker needs the composition to live inside
  * an app `clientEntry` that re-renders when `current` changes.
  */
-import type { ElementProps, Handle, RemixNode } from 'remix/ui'
+import type { ElementProps, Handle, RemixNode } from 'remix/component'
 
 import { TouchTarget } from './button.tsx'
 import { CurrentIndicator, LayoutGroup } from './current-indicator.tsx'

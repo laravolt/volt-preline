@@ -13,7 +13,7 @@
  *
  * Hydration: no client entry is needed for form posting; `RadioGroup.onChange` needs one.
  */
-import { on, type ElementProps, type Handle, type RemixNode } from 'remix/ui'
+import { on, type ElementProps, type Handle, type RemixNode } from 'remix/component'
 
 import { choiceBaseClasses, choiceColors, choiceFieldClasses } from './checkbox.tsx'
 import { controlAttrsFromField, registerFieldProvider, type FieldContextValue } from './fieldset.tsx'

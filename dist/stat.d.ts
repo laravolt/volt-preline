@@ -8,7 +8,7 @@
  *
  * Hydration: none required.
  */
-import type { ElementProps, Handle } from 'remix/ui';
+import type { ElementProps, Handle } from 'remix/component';
 export type StatProps = {
     title: string;
     value: string;
@@ -16,4 +16,4 @@ export type StatProps = {
     className?: string;
     class?: string;
 } & ElementProps;
-export declare function Stat(handle: Handle<StatProps>): () => import("remix/ui").RemixElement;
+export declare function Stat(handle: Handle<StatProps>): () => import("remix/component").RemixElement;

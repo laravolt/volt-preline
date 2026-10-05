@@ -16,7 +16,7 @@
  * `clientEntry` (the layout itself is not one). Server output is the closed drawer plus the desktop
  * sidebar.
  */
-import { on, ref, type ElementProps, type Handle, type RemixNode } from 'remix/ui'
+import { on, ref, type ElementProps, type Handle, type RemixNode } from 'remix/component'
 
 import { NavbarItem } from './navbar.tsx'
 import { cx, splitProps } from './utils.ts'

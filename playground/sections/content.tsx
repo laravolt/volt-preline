@@ -1,5 +1,5 @@
 /** Kitchen-sink section for the non-interactive content components (Preline styling). */
-import { clientEntry, type Handle } from 'remix/ui'
+import { clientEntry, type Handle } from 'remix/component'
 
 import { Avatar, AvatarButton } from '../../src/avatar.tsx'
 import { Badge, BadgeButton, badgeColors } from '../../src/badge.tsx'

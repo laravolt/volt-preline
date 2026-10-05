@@ -11,7 +11,7 @@
  * open/close buttons are wired. Keep `StackedLayoutContent` OUTSIDE that client entry: page content
  * passed as island `children` is serialized and loses every `mix`.
  */
-import { on, ref, type ElementProps, type Handle, type RemixNode } from 'remix/ui'
+import { on, ref, type ElementProps, type Handle, type RemixNode } from 'remix/component'
 
 import { NavbarItem } from './navbar.tsx'
 import { CloseMenuIcon, OpenMenuIcon, mobileSidebarDialogClasses, mobileSidebarPanelClasses } from './sidebar-layout.tsx'

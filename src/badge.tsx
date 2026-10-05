@@ -13,7 +13,7 @@
  *
  * Hydration: none required.
  */
-import type { ElementProps, Handle, RemixNode } from 'remix/ui'
+import type { ElementProps, Handle, RemixNode } from 'remix/component'
 
 import { TouchTarget } from './button.tsx'
 import { Link } from './link.tsx'

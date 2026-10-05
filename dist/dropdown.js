@@ -1,6 +1,6 @@
-import { jsx as _jsx } from "remix/ui/jsx-runtime";
+import { jsx as _jsx } from "remix/component/jsx-runtime";
 /**
- * `Dropdown` — Preline "Dropdown" styling on top of `remix/ui/menu/primitives` (no `preline.js`).
+ * `Dropdown` — Preline "Dropdown" styling on top of `@remix-run/ui/menu` (no `preline.js`).
  *
  * API parity with `volt-catalyst/dropdown`: `Dropdown` (`label`, `onSelect(event)`), `DropdownButton`
  * (`as`, defaults to `Button`), `DropdownMenu` (`anchor="bottom end"` strings), `DropdownItem` (`href`,
@@ -11,7 +11,7 @@ import { jsx as _jsx } from "remix/ui/jsx-runtime";
  * - `Dropdown` renders `menu.Context` (no wrapper element) and exposes `onSelect` through context; the
  *   `MenuSelectEvent` also bubbles from the item so ancestors can listen with `onMenuSelect(...)`.
  * - `DropdownButton` applies `menu.trigger()`; the host component must forward `mix` to its root element.
- * - `DropdownMenu` is a native `popover="manual"` surface positioned by `remix/ui/anchor`. The `anchor`
+ * - `DropdownMenu` is a native `popover="manual"` surface positioned by `@remix-run/ui/anchor`. The `anchor`
  *   prop is mapped to an anchor placement (`'bottom end'` → `bottom-end`, gap 8px — Preline's `mt-2`)
  *   and swapped into the popover context right before the surface opens. The resolved placement (after
  *   viewport flipping) is written to `data-anchor-placement`.
@@ -23,9 +23,9 @@ import { jsx as _jsx } from "remix/ui/jsx-runtime";
  *
  * Hydration: interactive only inside an app `clientEntry`; the components are not client entries.
  */
-import { on, ref, } from 'remix/ui';
-import * as menu from 'remix/ui/menu/primitives';
-import * as popover from 'remix/ui/popover';
+import { on, ref, } from 'remix/component';
+import * as menu from '@remix-run/ui/menu';
+import * as popover from '@remix-run/ui/popover';
 import { Button } from "./button.js";
 import { cx, splitProps } from "./utils.js";
 /** `anchor="bottom end"` → remix anchor options. Gap = Preline's `mt-2`. */

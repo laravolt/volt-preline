@@ -1,4 +1,4 @@
-import { jsx as _jsx, Fragment as _Fragment, jsxs as _jsxs } from "remix/ui/jsx-runtime";
+import { jsx as _jsx, Fragment as _Fragment, jsxs as _jsxs } from "remix/component/jsx-runtime";
 import { cx, splitProps } from "./utils.js";
 function createIcon(viewBox, paths) {
     return function Icon(handle) {

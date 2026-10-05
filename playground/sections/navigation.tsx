@@ -1,5 +1,5 @@
 /** Kitchen-sink section: Sidebar, Navbar, SidebarLayout, StackedLayout, Pagination, Link, AuthLayout. */
-import { clientEntry, on, type Handle, type RemixNode } from 'remix/ui'
+import { clientEntry, on, type Handle, type RemixNode } from 'remix/component'
 
 import { Avatar } from '../../src/avatar.tsx'
 import {

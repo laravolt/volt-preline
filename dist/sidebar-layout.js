@@ -1,4 +1,4 @@
-import { jsx as _jsx, jsxs as _jsxs } from "remix/ui/jsx-runtime";
+import { jsx as _jsx, jsxs as _jsxs } from "remix/component/jsx-runtime";
 /**
  * `SidebarLayout` for volt-preline (API parity with volt-catalyst `sidebar-layout.tsx`: same
  * `navbar`/`sidebar`/`children` props and drawer behavior; Preline application-layout look).
@@ -17,7 +17,7 @@ import { jsx as _jsx, jsxs as _jsxs } from "remix/ui/jsx-runtime";
  * `clientEntry` (the layout itself is not one). Server output is the closed drawer plus the desktop
  * sidebar.
  */
-import { on, ref } from 'remix/ui';
+import { on, ref } from 'remix/component';
 import { NavbarItem } from "./navbar.js";
 import { cx, splitProps } from "./utils.js";
 export function OpenMenuIcon() {

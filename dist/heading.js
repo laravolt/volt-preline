@@ -9,7 +9,7 @@
  *
  * Hydration: none required.
  */
-import { createElement } from 'remix/ui';
+import { createElement } from 'remix/component';
 import { cx, splitProps } from "./utils.js";
 export function Heading(handle) {
     return () => {

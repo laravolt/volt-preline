@@ -14,7 +14,7 @@
  *
  * Hydration: none required.
  */
-import type { ElementProps, Handle, RemixNode } from 'remix/ui';
+import type { ElementProps, Handle, RemixNode } from 'remix/component';
 export type AvatarProps = {
     src?: string | null;
     square?: boolean;
@@ -23,7 +23,7 @@ export type AvatarProps = {
     className?: string;
     class?: string;
 };
-export declare function Avatar(handle: Handle<AvatarProps & ElementProps>): () => import("remix/ui").RemixElement;
+export declare function Avatar(handle: Handle<AvatarProps & ElementProps>): () => import("remix/component").RemixElement;
 export type AvatarButtonProps = AvatarProps & {
     children?: RemixNode;
 } & (({
@@ -34,4 +34,4 @@ export type AvatarButtonProps = AvatarProps & {
     href: string;
     target?: string;
 } & ElementProps));
-export declare function AvatarButton(handle: Handle<AvatarButtonProps>): () => import("remix/ui").RemixElement;
+export declare function AvatarButton(handle: Handle<AvatarButtonProps>): () => import("remix/component").RemixElement;

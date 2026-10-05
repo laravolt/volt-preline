@@ -1,4 +1,4 @@
-import { jsx as _jsx } from "remix/ui/jsx-runtime";
+import { jsx as _jsx } from "remix/component/jsx-runtime";
 /**
  * `textarea.tsx` — Preline-styled textarea with the volt-catalyst API.
  *
@@ -13,7 +13,7 @@ import { jsx as _jsx } from "remix/ui/jsx-runtime";
  *
  * Hydration: static markup; no client entry required unless `onChange`/`onInput` are used.
  */
-import { on } from 'remix/ui';
+import { on } from 'remix/component';
 import { controlAttrsFromField } from "./fieldset.js";
 import { inputClasses } from "./input.js";
 import { cx, splitProps } from "./utils.js";

@@ -16,9 +16,9 @@
  * `clientEntry` (the layout itself is not one). Server output is the closed drawer plus the desktop
  * sidebar.
  */
-import { type ElementProps, type Handle, type RemixNode } from 'remix/ui';
-export declare function OpenMenuIcon(): () => import("remix/ui").RemixElement;
-export declare function CloseMenuIcon(): () => import("remix/ui").RemixElement;
+import { type ElementProps, type Handle, type RemixNode } from 'remix/component';
+export declare function OpenMenuIcon(): () => import("remix/component").RemixElement;
+export declare function CloseMenuIcon(): () => import("remix/component").RemixElement;
 /** Classes for the mobile drawer `<dialog>`: UA reset + Preline off-canvas slide + dimmed backdrop. */
 export declare const mobileSidebarDialogClasses: string;
 /** Classes for the panel inside the drawer (the visible sidebar surface). */
@@ -30,4 +30,4 @@ export type SidebarLayoutProps = {
     class?: string;
     children?: RemixNode;
 } & ElementProps;
-export declare function SidebarLayout(handle: Handle<SidebarLayoutProps>): () => import("remix/ui").RemixElement;
+export declare function SidebarLayout(handle: Handle<SidebarLayoutProps>): () => import("remix/component").RemixElement;

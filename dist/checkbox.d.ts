@@ -19,14 +19,14 @@
  *
  * Hydration: no client entry is needed for form posting; `onChange`/`indeterminate` need one.
  */
-import { type ElementProps, type Handle, type RemixNode } from 'remix/ui';
+import { type ElementProps, type Handle, type RemixNode } from 'remix/component';
 import { type FieldContextValue } from './fieldset.tsx';
 export type CheckboxGroupProps = {
     className?: string;
     class?: string;
     children?: RemixNode;
 } & ElementProps;
-export declare function CheckboxGroup(handle: Handle<CheckboxGroupProps>): () => import("remix/ui").RemixElement;
+export declare function CheckboxGroup(handle: Handle<CheckboxGroupProps>): () => import("remix/component").RemixElement;
 export type CheckboxFieldProps = {
     id?: string;
     disabled?: boolean;
@@ -36,7 +36,7 @@ export type CheckboxFieldProps = {
 } & ElementProps;
 /** Shared control/label/description layout for Checkbox and Radio fields. */
 export declare const choiceFieldClasses: string[];
-export declare function CheckboxField(handle: Handle<CheckboxFieldProps, FieldContextValue>): () => import("remix/ui").RemixElement;
+export declare function CheckboxField(handle: Handle<CheckboxFieldProps, FieldContextValue>): () => import("remix/component").RemixElement;
 /** `@tailwindcss/forms` fills a checked box with `currentColor`, so each color is a text utility. */
 export declare const choiceColors: {
     'dark/zinc': string;
@@ -83,4 +83,4 @@ export type CheckboxProps = {
     className?: string;
     class?: string;
 } & ElementProps;
-export declare function Checkbox(handle: Handle<CheckboxProps>): () => import("remix/ui").RemixElement;
+export declare function Checkbox(handle: Handle<CheckboxProps>): () => import("remix/component").RemixElement;

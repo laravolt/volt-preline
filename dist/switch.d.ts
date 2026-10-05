@@ -15,14 +15,14 @@
  *
  * Hydration: no client entry is needed for form posting; `onChange` needs one.
  */
-import { type ElementProps, type Handle, type RemixNode } from 'remix/ui';
+import { type ElementProps, type Handle, type RemixNode } from 'remix/component';
 import { type FieldContextValue } from './fieldset.tsx';
 export type SwitchGroupProps = {
     className?: string;
     class?: string;
     children?: RemixNode;
 } & ElementProps;
-export declare function SwitchGroup(handle: Handle<SwitchGroupProps>): () => import("remix/ui").RemixElement;
+export declare function SwitchGroup(handle: Handle<SwitchGroupProps>): () => import("remix/component").RemixElement;
 export type SwitchFieldProps = {
     id?: string;
     disabled?: boolean;
@@ -30,7 +30,7 @@ export type SwitchFieldProps = {
     class?: string;
     children?: RemixNode;
 } & ElementProps;
-export declare function SwitchField(handle: Handle<SwitchFieldProps, FieldContextValue>): () => import("remix/ui").RemixElement;
+export declare function SwitchField(handle: Handle<SwitchFieldProps, FieldContextValue>): () => import("remix/component").RemixElement;
 /** Checked track color per volt-catalyst color key. */
 declare const colors: {
     'dark/zinc': string;
@@ -74,5 +74,5 @@ export type SwitchProps = {
     className?: string;
     class?: string;
 } & ElementProps;
-export declare function Switch(handle: Handle<SwitchProps>): () => import("remix/ui").RemixElement;
+export declare function Switch(handle: Handle<SwitchProps>): () => import("remix/component").RemixElement;
 export {};

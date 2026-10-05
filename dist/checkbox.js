@@ -1,4 +1,4 @@
-import { jsx as _jsx } from "remix/ui/jsx-runtime";
+import { jsx as _jsx } from "remix/component/jsx-runtime";
 /**
  * `checkbox.tsx` — Preline-styled native checkbox with the volt-catalyst API.
  *
@@ -20,7 +20,7 @@ import { jsx as _jsx } from "remix/ui/jsx-runtime";
  *
  * Hydration: no client entry is needed for form posting; `onChange`/`indeterminate` need one.
  */
-import { on, ref } from 'remix/ui';
+import { on, ref } from 'remix/component';
 import { controlAttrsFromField, registerFieldProvider } from "./fieldset.js";
 import { cx, splitProps } from "./utils.js";
 export function CheckboxGroup(handle) {

@@ -18,7 +18,7 @@
  *
  * Hydration: none required; navigation is a plain anchor enhanced by Remix `run()`.
  */
-import type { ElementProps, Handle, RemixNode } from 'remix/ui';
+import type { ElementProps, Handle, RemixNode } from 'remix/component';
 declare const styles: {
     base: string[];
     outline: string[];
@@ -79,12 +79,12 @@ export type ButtonProps = ButtonStyleProps & {
     class?: string;
     children?: RemixNode;
 } & ButtonElementProps;
-export declare function Button(handle: Handle<ButtonProps>): () => import("remix/ui").RemixElement;
+export declare function Button(handle: Handle<ButtonProps>): () => import("remix/component").RemixElement;
 /**
  * Expands the hit area to at least 44×44px on coarse pointers (touch). Renders an `aria-hidden`
  * helper span before the children; the parent must be `relative`.
  */
 export declare function TouchTarget(handle: Handle<{
     children?: RemixNode;
-}>): () => import("remix/ui").RemixElement;
+}>): () => import("remix/component").RemixElement;
 export {};

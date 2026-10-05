@@ -1,4 +1,4 @@
-import { jsx as _jsx } from "remix/ui/jsx-runtime";
+import { jsx as _jsx } from "remix/component/jsx-runtime";
 /**
  * `radio.tsx` — Preline-styled native radio with the volt-catalyst API.
  *
@@ -14,7 +14,7 @@ import { jsx as _jsx } from "remix/ui/jsx-runtime";
  *
  * Hydration: no client entry is needed for form posting; `RadioGroup.onChange` needs one.
  */
-import { on } from 'remix/ui';
+import { on } from 'remix/component';
 import { choiceBaseClasses, choiceColors, choiceFieldClasses } from "./checkbox.js";
 import { controlAttrsFromField, registerFieldProvider } from "./fieldset.js";
 import { cx, splitProps } from "./utils.js";

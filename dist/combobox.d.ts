@@ -1,5 +1,5 @@
 /**
- * `Combobox` — Preline "ComboBox" styling on top of `remix/ui/combobox/primitives`.
+ * `Combobox` — Preline "ComboBox" styling on top of `@remix-run/ui/combobox`.
  *
  * API parity with `volt-catalyst/combobox`: same exports (`Combobox`, `ComboboxOption`,
  * `ComboboxLabel`, `ComboboxDescription`) and props: `options`, `displayValue(option)`, optional
@@ -32,7 +32,7 @@
  * Hydration: `Combobox` is not a client entry. Place it inside an app `clientEntry` for typing /
  * keyboard / popover behavior; it server-renders as a plain text input + hidden input.
  */
-import { type ElementProps, type Handle, type RemixNode } from 'remix/ui';
+import { type ElementProps, type Handle, type RemixNode } from 'remix/component';
 export type ComboboxProps<T> = {
     options: T[];
     displayValue: (option: T | null) => string | undefined;
@@ -99,8 +99,8 @@ interface ComboboxContextValue<T = unknown> {
     updateOptions: (() => Promise<unknown>) | null;
     input: HTMLInputElement | null;
 }
-export declare function Combobox<T>(handle: Handle<ComboboxProps<T>, ComboboxContextValue<T>>): () => import("remix/ui").RemixElement;
-export declare function ComboboxOption<T>(handle: Handle<ComboboxOptionProps<T>>): () => import("remix/ui").RemixElement;
-export declare function ComboboxLabel(handle: Handle<ComboboxLabelProps>): () => import("remix/ui").RemixElement;
-export declare function ComboboxDescription(handle: Handle<ComboboxDescriptionProps>): () => import("remix/ui").RemixElement;
+export declare function Combobox<T>(handle: Handle<ComboboxProps<T>, ComboboxContextValue<T>>): () => import("remix/component").RemixElement;
+export declare function ComboboxOption<T>(handle: Handle<ComboboxOptionProps<T>>): () => import("remix/component").RemixElement;
+export declare function ComboboxLabel(handle: Handle<ComboboxLabelProps>): () => import("remix/component").RemixElement;
+export declare function ComboboxDescription(handle: Handle<ComboboxDescriptionProps>): () => import("remix/component").RemixElement;
 export {};

@@ -3,7 +3,7 @@
  * drop-in. Each icon is `<svg data-slot="icon" aria-hidden="true" fill="currentColor">` so the
  * Button / Sidebar icon selectors (`*:data-[slot=icon]:…`) apply. Static markup, no hydration.
  */
-import type { ElementProps, Handle, RemixNode } from 'remix/ui'
+import type { ElementProps, Handle, RemixNode } from 'remix/component'
 
 import { cx, splitProps } from './utils.ts'
 

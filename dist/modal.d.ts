@@ -13,7 +13,7 @@
  *
  * Hydration: only meaningful inside a client entry; the `<dialog>` stays closed during SSR.
  */
-import { type Handle, type MixValue } from 'remix/ui';
+import { type Handle, type MixValue } from 'remix/component';
 export interface ModalContextValue {
     titleId: string;
     descriptionId: string;

@@ -1,4 +1,4 @@
-import { jsx as _jsx } from "remix/ui/jsx-runtime";
+import { jsx as _jsx } from "remix/component/jsx-runtime";
 import { cx, splitProps } from "./utils.js";
 const fieldProviders = new Set();
 /** Register a component that provides `FieldContextValue` (used by CheckboxField, RadioField, SwitchField). */

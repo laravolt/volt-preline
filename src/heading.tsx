@@ -9,7 +9,7 @@
  *
  * Hydration: none required.
  */
-import { createElement, type ElementProps, type Handle, type RemixNode } from 'remix/ui'
+import { createElement, type ElementProps, type Handle, type RemixNode } from 'remix/component'
 
 import { cx, splitProps } from './utils.ts'
 

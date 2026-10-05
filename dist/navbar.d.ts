@@ -14,7 +14,7 @@
  * Hydration: markup is server-renderable; the animated marker needs the composition to live inside
  * an app `clientEntry` that re-renders when `current` changes.
  */
-import type { ElementProps, Handle, RemixNode } from 'remix/ui';
+import type { ElementProps, Handle, RemixNode } from 'remix/component';
 import { LayoutGroup } from './current-indicator.tsx';
 type DivProps = {
     className?: string;
@@ -22,14 +22,14 @@ type DivProps = {
     children?: RemixNode;
 } & ElementProps;
 export type NavbarProps = DivProps;
-export declare function Navbar(handle: Handle<NavbarProps>): () => import("remix/ui").RemixElement;
+export declare function Navbar(handle: Handle<NavbarProps>): () => import("remix/component").RemixElement;
 export type NavbarDividerProps = DivProps;
-export declare function NavbarDivider(handle: Handle<NavbarDividerProps>): () => import("remix/ui").RemixElement;
+export declare function NavbarDivider(handle: Handle<NavbarDividerProps>): () => import("remix/component").RemixElement;
 export type NavbarSectionProps = DivProps;
 /** Scopes the sliding current-item marker (Catalyst `LayoutGroup` equivalent). */
-export declare function NavbarSection(handle: Handle<NavbarSectionProps, LayoutGroup>): () => import("remix/ui").RemixElement;
+export declare function NavbarSection(handle: Handle<NavbarSectionProps, LayoutGroup>): () => import("remix/component").RemixElement;
 export type NavbarSpacerProps = DivProps;
-export declare function NavbarSpacer(handle: Handle<NavbarSpacerProps>): () => import("remix/ui").RemixElement;
+export declare function NavbarSpacer(handle: Handle<NavbarSpacerProps>): () => import("remix/component").RemixElement;
 export type NavbarItemProps = {
     current?: boolean;
     className?: string;
@@ -38,7 +38,7 @@ export type NavbarItemProps = {
     /** With `href` the item renders as a `<Link>`; without it, as `<button type="button">`. */
     href?: string;
 } & ElementProps;
-export declare function NavbarItem(handle: Handle<NavbarItemProps>): () => import("remix/ui").RemixElement;
+export declare function NavbarItem(handle: Handle<NavbarItemProps>): () => import("remix/component").RemixElement;
 export type NavbarLabelProps = DivProps;
-export declare function NavbarLabel(handle: Handle<NavbarLabelProps>): () => import("remix/ui").RemixElement;
+export declare function NavbarLabel(handle: Handle<NavbarLabelProps>): () => import("remix/component").RemixElement;
 export {};

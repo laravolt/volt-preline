@@ -13,7 +13,7 @@
  *
  * Hydration: none required.
  */
-import type { ElementProps, Handle, RemixNode } from 'remix/ui';
+import type { ElementProps, Handle, RemixNode } from 'remix/component';
 declare const colors: {
     red: string;
     orange: string;
@@ -42,7 +42,7 @@ export type BadgeProps = {
     class?: string;
     children?: RemixNode;
 } & ElementProps;
-export declare function Badge(handle: Handle<BadgeProps>): () => import("remix/ui").RemixElement;
+export declare function Badge(handle: Handle<BadgeProps>): () => import("remix/component").RemixElement;
 export type BadgeButtonProps = {
     color?: BadgeColor;
     className?: string;
@@ -56,5 +56,5 @@ export type BadgeButtonProps = {
     href: string;
     target?: string;
 } & ElementProps));
-export declare function BadgeButton(handle: Handle<BadgeButtonProps>): () => import("remix/ui").RemixElement;
+export declare function BadgeButton(handle: Handle<BadgeButtonProps>): () => import("remix/component").RemixElement;
 export {};

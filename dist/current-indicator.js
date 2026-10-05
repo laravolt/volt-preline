@@ -1,4 +1,4 @@
-import { jsx as _jsx } from "remix/ui/jsx-runtime";
+import { jsx as _jsx } from "remix/component/jsx-runtime";
 /**
  * Internal: the sliding "current item" marker shared by `NavbarItem` and `SidebarItem`
  * (API parity with volt-catalyst `current-indicator.tsx`; same `LayoutGroup` + `CurrentIndicator`
@@ -7,7 +7,7 @@ import { jsx as _jsx } from "remix/ui/jsx-runtime";
  * Mechanics:
  * - `NavbarSection` / `SidebarSection` create a `LayoutGroup` and expose it through `handle.context`.
  * - The current item renders one keyed `<span data-slot="current-indicator">` with `animateLayout()`
- *   from `remix/ui/animation`, which FLIP-animates the span whenever its own item moves or resizes.
+ *   from `@remix-run/ui/animation`, which FLIP-animates the span whenever its own item moves or resizes.
  * - When `current` jumps to a *different* item the span is a new element in a new parent, so
  *   `animateLayout` alone cannot connect the two. The group therefore records the live marker's box
  *   at the start of every section render (before the DOM is patched) and the freshly inserted span
@@ -18,8 +18,8 @@ import { jsx as _jsx } from "remix/ui/jsx-runtime";
  *
  * Server rendering: the span is plain markup; boxes are only measured in the browser.
  */
-import { ref } from 'remix/ui';
-import { animateLayout, spring } from 'remix/ui/animation';
+import { ref } from 'remix/component';
+import { animateLayout, spring } from '@remix-run/ui/animation';
 const INDICATOR_KEY = 'current-indicator';
 /** Context value provided by a section (the equivalent of Catalyst's `LayoutGroup`). */
 export class LayoutGroup {

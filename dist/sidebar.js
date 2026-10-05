@@ -1,4 +1,4 @@
-import { jsx as _jsx, jsxs as _jsxs } from "remix/ui/jsx-runtime";
+import { jsx as _jsx, jsxs as _jsxs } from "remix/component/jsx-runtime";
 /**
  * `Sidebar` family for volt-preline (API parity with volt-catalyst `sidebar.tsx`: same exports,
  * props, context wiring, `data-current` and drawer-closing behavior; Preline sidebar look).
@@ -16,7 +16,7 @@ import { jsx as _jsx, jsxs as _jsxs } from "remix/ui/jsx-runtime";
  * Hydration: markup is server-renderable; the animated marker and drawer-close need the composition
  * to live inside an app `clientEntry`.
  */
-import { on } from 'remix/ui';
+import { on } from 'remix/component';
 import { TouchTarget } from "./button.js";
 import { CurrentIndicator, LayoutGroup } from "./current-indicator.js";
 import { Link } from "./link.js";
