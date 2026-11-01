@@ -70,12 +70,12 @@
     "@tailwindcss/forms": "^0.5.0"
   },
   "devDependencies": {
-    "@playwright/test": "1.58.2",
-    "@tailwindcss/cli": "4.2.2",
-    "@tailwindcss/forms": "0.5.10",
+    "@playwright/test": "1.64.1",
+    "@tailwindcss/cli": "4.3.3",
+    "@tailwindcss/forms": "0.5.11",
     "@types/node": "25.5.0",
     "remix": "3.0.0",
-    "tailwindcss": "4.2.2",
+    "tailwindcss": "4.3.3",
     "typescript": "6.0.2"
   }
 }
