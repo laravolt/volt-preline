@@ -223,3 +223,4 @@ See `CONVENTIONS.md`.
 Built on [Preline UI](https://preline.co) by Preline Labs Ltd. (MIT + Preline UI Fair Use License).
 `volt-preline` is a Remix UI integration of Preline's design language, not a replacement for Preline UI;
 Preline Pro content is not included.
+See [NOTICE](NOTICE) for the attribution and [LICENSE](LICENSE) for this package's MIT license.
