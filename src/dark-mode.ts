@@ -197,5 +197,11 @@ export function themeHtmlProps(theme: ServerTheme): {
  * Uses the same storage key and logic as `installDarkMode()`.
  */
 export function darkModeHeadScript(storageKey = DEFAULT_KEY): string {
-  return `(function(){try{var v=localStorage.getItem(${JSON.stringify(storageKey)});var d=v==='dark'||(v!=='light'&&matchMedia('(prefers-color-scheme: dark)').matches);document.documentElement.classList.toggle('dark',d)}catch(e){}})()`
+  // The result goes inside an inline <script>, so a key holding `</script>` or a line separator
+  // must not end the element or the string literal early.
+  const key = JSON.stringify(storageKey).replace(
+    /[<>&\u2028\u2029]/g,
+    (c) => `\\u${c.charCodeAt(0).toString(16).padStart(4, '0')}`,
+  )
+  return `(function(){try{var v=localStorage.getItem(${key});var d=v==='dark'||(v!=='light'&&matchMedia('(prefers-color-scheme: dark)').matches);document.documentElement.classList.toggle('dark',d)}catch(e){}})()`
 }
