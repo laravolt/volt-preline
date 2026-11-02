@@ -37,8 +37,8 @@ import { Fragment, on, ref } from 'remix/component';
 import * as combobox from '@remix-run/ui/combobox';
 import * as listbox from '@remix-run/ui/listbox';
 import * as popover from '@remix-run/ui/popover';
-import { controlAttrsFromField } from "./fieldset.js";
-import { cx, splitProps } from "./utils.js";
+import { controlAttrsFromField } from './fieldset.js';
+import { cx, splitProps } from './utils.js';
 /** Row content: label + description side by side, icons/avatars sized like Preline's select items. */
 const optionContentClasses = cx('flex min-w-0 flex-1 items-center gap-x-2', '*:data-[slot=icon]:size-4 *:data-[slot=icon]:shrink-0 *:data-[slot=icon]:text-muted-foreground', '*:data-[slot=avatar]:size-5 *:data-[slot=avatar]:shrink-0');
 function defaultValueKey(option, displayValue) {

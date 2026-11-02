@@ -1,4 +1,4 @@
-# volt-preline conventions (Remix 3.0.0-rc.1)
+# volt-preline conventions (Remix 3.1)
 
 Goal: an MIT component library for Remix UI with the **same component API as `volt-catalyst`**
 (same file names, export names and props) but styled with **Preline UI 5** (free tier) markup and

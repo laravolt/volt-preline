@@ -18,8 +18,8 @@ import { jsx as _jsx, jsxs as _jsxs } from "remix/component/jsx-runtime";
  * sidebar.
  */
 import { on, ref } from 'remix/component';
-import { NavbarItem } from "./navbar.js";
-import { cx, splitProps } from "./utils.js";
+import { NavbarItem } from './navbar.js';
+import { cx, splitProps } from './utils.js';
 export function OpenMenuIcon() {
     return () => (_jsx("svg", { "data-slot": "icon", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 2, strokeLinecap: "round", strokeLinejoin: "round", "aria-hidden": "true", children: _jsx("path", { d: "M4 6h16M4 12h16M4 18h16" }) }));
 }

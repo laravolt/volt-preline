@@ -18,7 +18,8 @@ Interactions (dropdown, listbox, combobox, dialog, drawers) are built on `remix/
 @import "volt-preline/styles.css";   /* variants + @tailwindcss/forms + theme tokens + .dark variant */
 @source "../../node_modules/volt-preline/dist";
 ```
-Add `"volt-preline"` to `assets.allowPackages` in `remix.json`.
+Requires `remix` 3.1 or later. Add `"volt-preline"`, `"@remix-run/ui"` and `"@remix-run/component"` to
+`assets.allowPackages` in `remix.json`, next to `"remix"`.
 
 ## Dark Mode
 

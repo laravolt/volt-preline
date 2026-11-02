@@ -18,8 +18,8 @@ import { jsx as _jsx, jsxs as _jsxs } from "remix/component/jsx-runtime";
  * Hydration: static markup; no client entry required unless `onChange` is used.
  */
 import { on } from 'remix/component';
-import { controlAttrsFromField } from "./fieldset.js";
-import { cx, splitProps } from "./utils.js";
+import { controlAttrsFromField } from './fieldset.js';
+import { cx, splitProps } from './utils.js';
 function isElement(node) {
     return typeof node === 'object' && node !== null && node.$rmx === true;
 }

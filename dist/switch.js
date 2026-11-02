@@ -17,8 +17,8 @@ import { jsx as _jsx, jsxs as _jsxs } from "remix/component/jsx-runtime";
  * Hydration: no client entry is needed for form posting; `onChange` needs one.
  */
 import { on } from 'remix/component';
-import { controlAttrsFromField, registerFieldProvider } from "./fieldset.js";
-import { cx, splitProps } from "./utils.js";
+import { controlAttrsFromField, registerFieldProvider } from './fieldset.js';
+import { cx, splitProps } from './utils.js';
 export function SwitchGroup(handle) {
     return () => {
         let { className, rest } = splitProps(handle.props);

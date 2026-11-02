@@ -10,7 +10,7 @@
  * Hydration: none required.
  */
 import { createElement } from 'remix/component';
-import { cx, splitProps } from "./utils.js";
+import { cx, splitProps } from './utils.js';
 export function Heading(handle) {
     return () => {
         let { className, rest } = splitProps(handle.props);

@@ -26,8 +26,8 @@ import { jsx as _jsx } from "remix/component/jsx-runtime";
 import { on, ref, } from 'remix/component';
 import * as menu from '@remix-run/ui/menu';
 import * as popover from '@remix-run/ui/popover';
-import { Button } from "./button.js";
-import { cx, splitProps } from "./utils.js";
+import { Button } from './button.js';
+import { cx, splitProps } from './utils.js';
 /** `anchor="bottom end"` → remix anchor options. Gap = Preline's `mt-2`. */
 function toAnchorOptions(anchor) {
     return { placement: anchor.replace(' ', '-'), offset: 8 };

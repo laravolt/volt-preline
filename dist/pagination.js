@@ -1,6 +1,6 @@
 import { jsx as _jsx, jsxs as _jsxs } from "remix/component/jsx-runtime";
-import { Button } from "./button.js";
-import { cx, splitProps } from "./utils.js";
+import { Button } from './button.js';
+import { cx, splitProps } from './utils.js';
 export function Pagination(handle) {
     return () => {
         let { className, rest } = splitProps(handle.props);

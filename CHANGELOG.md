@@ -1,11 +1,19 @@
 # Changelog
 
-## Unreleased
-- Remix 3.0.0: `remix/ui` was split upstream. Components import the runtime from `remix/component`
-  (JSX via `remix/component/jsx-runtime`) and the primitives from `@remix-run/ui` 0.12.1, now a
-  direct dependency (`menu`, `select`, `combobox` lost their `/primitives` suffix). Peer dependency
-  is `remix ^3.0.0`. Apps that serve volt-preline through `createAssetServer` must add
-  `@remix-run/ui` and `@remix-run/component` to `allowPackages` (the playground does).
+## 0.3.0 — 2026-11-02
+- **Remix 3.1.** Peer dependency is now `remix ^3.1.0`, and `@remix-run/ui` is 0.13.0 (it requires
+  `@remix-run/component` 1.1, which ships with `remix` 3.1.0). Apps on `remix` 3.0.x must upgrade
+  to 3.1 with this release; one copy of the component runtime is installed either way.
+- `remix/ui` was split upstream in Remix 3.0. Components import the runtime from `remix/component`
+  (JSX via `remix/component/jsx-runtime`) and the primitives from `@remix-run/ui`, now a direct
+  dependency (`menu`, `select`, `combobox` lost their `/primitives` suffix). Apps that serve
+  volt-preline through `createAssetServer` must add `@remix-run/ui` and `@remix-run/component` to
+  `allowPackages` (the playground does).
+- `dark-mode`: `darkModeHeadScript()` escapes `<`, `>`, `&` and U+2028/U+2029 in the storage key, so
+  a custom key can no longer end the inline `<script>` early. The default key's output is unchanged.
+- `dist/` is built with TypeScript 7 (quote style and import order differ; the code is the same),
+  and CI now fails when `dist/` does not match `npm run build`.
+- LICENSE is plain MIT; the Preline attribution moved to `NOTICE`, which ships in the package.
 
 ## 0.2.0 — 2026-09-06
 - `dark-mode`: `setTheme()` and `installDarkMode()` now also sync the preference to a `volt-theme`

@@ -1,7 +1,7 @@
 import { jsx as _jsx } from "remix/component/jsx-runtime";
-import { dialogHostClasses } from "./dialog.js";
-import { createModal } from "./modal.js";
-import { cx, splitProps } from "./utils.js";
+import { dialogHostClasses } from './dialog.js';
+import { createModal } from './modal.js';
+import { cx, splitProps } from './utils.js';
 const sizes = {
     xs: 'sm:max-w-xs',
     sm: 'sm:max-w-sm',

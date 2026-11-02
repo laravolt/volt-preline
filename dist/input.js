@@ -19,8 +19,8 @@ import { jsx as _jsx } from "remix/component/jsx-runtime";
  * Hydration: static markup; no client entry required unless `onChange`/`onInput` are used.
  */
 import { on } from 'remix/component';
-import { controlAttrsFromField } from "./fieldset.js";
-import { cx, splitProps } from "./utils.js";
+import { controlAttrsFromField } from './fieldset.js';
+import { cx, splitProps } from './utils.js';
 export function InputGroup(handle) {
     return () => {
         let { className, rest } = splitProps(handle.props);

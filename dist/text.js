@@ -1,6 +1,6 @@
 import { jsx as _jsx } from "remix/component/jsx-runtime";
-import { Link } from "./link.js";
-import { cx, splitProps } from "./utils.js";
+import { Link } from './link.js';
+import { cx, splitProps } from './utils.js';
 export function Text(handle) {
     return () => {
         let { className, rest } = splitProps(handle.props);
