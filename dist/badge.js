@@ -1,7 +1,7 @@
 import { jsx as _jsx } from "remix/component/jsx-runtime";
-import { TouchTarget } from "./button.js";
-import { Link } from "./link.js";
-import { cx, splitProps } from "./utils.js";
+import { TouchTarget } from './button.js';
+import { Link } from './link.js';
+import { cx, splitProps } from './utils.js';
 // Preline soft badge per color plus a `group-hover` step for BadgeButton. Literal strings so Tailwind's scanner sees them.
 const colors = {
     red: 'bg-red-100 text-red-800 group-hover:bg-red-200 dark:bg-red-500/20 dark:text-red-400 dark:group-hover:bg-red-500/30',

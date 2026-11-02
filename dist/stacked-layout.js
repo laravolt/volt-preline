@@ -1,4 +1,4 @@
-import { jsx as _jsx, Fragment as _Fragment, jsxs as _jsxs } from "remix/component/jsx-runtime";
+import { Fragment as _Fragment, jsx as _jsx, jsxs as _jsxs } from "remix/component/jsx-runtime";
 /**
  * `StackedLayout` for volt-preline (API parity with volt-catalyst `stacked-layout.tsx`: same
  * `navbar`/`sidebar`/`children` props and drawer behavior; Preline navbar-on-top layout).
@@ -13,9 +13,9 @@ import { jsx as _jsx, Fragment as _Fragment, jsxs as _jsxs } from "remix/compone
  * passed as island `children` is serialized and loses every `mix`.
  */
 import { on, ref } from 'remix/component';
-import { NavbarItem } from "./navbar.js";
-import { CloseMenuIcon, OpenMenuIcon, mobileSidebarDialogClasses, mobileSidebarPanelClasses } from "./sidebar-layout.js";
-import { cx, splitProps } from "./utils.js";
+import { NavbarItem } from './navbar.js';
+import { CloseMenuIcon, OpenMenuIcon, mobileSidebarDialogClasses, mobileSidebarPanelClasses } from './sidebar-layout.js';
+import { cx, splitProps } from './utils.js';
 /** Outer flex column (`min-h-svh`). Server-renderable; wrap `StackedLayoutChrome` + `StackedLayoutContent`. */
 export function StackedLayoutRoot(handle) {
     return () => {

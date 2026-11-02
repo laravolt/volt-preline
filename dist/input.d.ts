@@ -24,7 +24,7 @@ export type InputGroupProps = {
     children?: RemixNode;
 } & ElementProps;
 export declare function InputGroup(handle: Handle<InputGroupProps>): () => import("remix/component").RemixElement;
-declare const dateTypes: readonly ["date", "datetime-local", "month", "time", "week"];
+declare const dateTypes: readonly ['date', 'datetime-local', 'month', 'time', 'week'];
 type DateType = (typeof dateTypes)[number];
 export type InputType = 'email' | 'number' | 'password' | 'search' | 'tel' | 'text' | 'url' | DateType;
 export type InputEventHandler = (event: Event & {

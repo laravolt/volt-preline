@@ -1,6 +1,6 @@
 import { jsx as _jsx, jsxs as _jsxs } from "remix/component/jsx-runtime";
-import { Badge } from "./badge.js";
-import { cx, splitProps } from "./utils.js";
+import { Badge } from './badge.js';
+import { cx, splitProps } from './utils.js';
 export function Stat(handle) {
     return () => {
         let { className, rest } = splitProps(handle.props);

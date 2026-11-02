@@ -1,7 +1,7 @@
 import { jsx as _jsx, jsxs as _jsxs } from "remix/component/jsx-runtime";
-import { TouchTarget } from "./button.js";
-import { Link } from "./link.js";
-import { cx, splitProps } from "./utils.js";
+import { TouchTarget } from './button.js';
+import { Link } from './link.js';
+import { cx, splitProps } from './utils.js';
 export function Avatar(handle) {
     return () => {
         let { className, rest } = splitProps(handle.props);

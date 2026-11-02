@@ -21,8 +21,8 @@ import { jsx as _jsx } from "remix/component/jsx-runtime";
  * Hydration: no client entry is needed for form posting; `onChange`/`indeterminate` need one.
  */
 import { on, ref } from 'remix/component';
-import { controlAttrsFromField, registerFieldProvider } from "./fieldset.js";
-import { cx, splitProps } from "./utils.js";
+import { controlAttrsFromField, registerFieldProvider } from './fieldset.js';
+import { cx, splitProps } from './utils.js';
 export function CheckboxGroup(handle) {
     return () => {
         let { className, rest } = splitProps(handle.props);

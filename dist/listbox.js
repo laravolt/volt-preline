@@ -32,8 +32,8 @@ import { jsx as _jsx, jsxs as _jsxs } from "remix/component/jsx-runtime";
 import { on } from 'remix/component';
 import * as popover from '@remix-run/ui/popover';
 import * as select from '@remix-run/ui/select';
-import { controlAttrsFromField } from "./fieldset.js";
-import { cx, splitProps } from "./utils.js";
+import { controlAttrsFromField } from './fieldset.js';
+import { cx, splitProps } from './utils.js';
 /** Text content of a Remix node tree (used for typeahead labels and the select's default label). */
 export function nodeText(node) {
     return collectText(node).replace(/\s+/g, ' ').trim();

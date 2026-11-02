@@ -1,6 +1,6 @@
-import { jsx as _jsx, Fragment as _Fragment, jsxs as _jsxs } from "remix/component/jsx-runtime";
-import { Link } from "./link.js";
-import { cx, splitProps } from "./utils.js";
+import { Fragment as _Fragment, jsx as _jsx, jsxs as _jsxs } from "remix/component/jsx-runtime";
+import { Link } from './link.js';
+import { cx, splitProps } from './utils.js';
 const styles = {
     base: [
         // Preline: inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border

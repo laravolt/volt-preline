@@ -15,9 +15,9 @@ import { jsx as _jsx } from "remix/component/jsx-runtime";
  * Hydration: no client entry is needed for form posting; `RadioGroup.onChange` needs one.
  */
 import { on } from 'remix/component';
-import { choiceBaseClasses, choiceColors, choiceFieldClasses } from "./checkbox.js";
-import { controlAttrsFromField, registerFieldProvider } from "./fieldset.js";
-import { cx, splitProps } from "./utils.js";
+import { choiceBaseClasses, choiceColors, choiceFieldClasses } from './checkbox.js';
+import { controlAttrsFromField, registerFieldProvider } from './fieldset.js';
+import { cx, splitProps } from './utils.js';
 export function RadioGroup(handle) {
     return () => {
         let { className, rest } = splitProps(handle.props);
