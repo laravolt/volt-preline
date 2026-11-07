@@ -172,7 +172,13 @@ export function readThemeCookie(
   for (let part of cookieHeader.split(';')) {
     let [name, ...rest] = part.trim().split('=')
     if (name !== cookieName) continue
-    let value = decodeURIComponent(rest.join('='))
+    let value: string
+    try {
+      value = decodeURIComponent(rest.join('='))
+    } catch {
+      // A malformed percent-escape is not a theme the server can honour.
+      return null
+    }
     if (value === 'light' || value === 'dark') return value
   }
   return null
