@@ -17,6 +17,11 @@ test('readThemeCookie parses theme correctly', () => {
   assert.equal(readThemeCookie('volt-theme=invalid'), null)
   assert.equal(readThemeCookie('volt-theme=system'), null)
 
+  // Malformed percent-escapes fall back to the system preference
+  assert.equal(readThemeCookie('volt-theme=%E0%A4%A'), null)
+  assert.equal(readThemeCookie('volt-theme=%'), null)
+  assert.equal(readThemeCookie('foo=1; volt-theme=%zz'), null)
+
   // Custom cookie name
   assert.equal(readThemeCookie('custom-theme=dark', 'custom-theme'), 'dark')
   assert.equal(readThemeCookie('volt-theme=dark', 'custom-theme'), null)

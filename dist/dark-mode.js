@@ -121,7 +121,14 @@ export function readThemeCookie(cookieHeader, cookieName = DEFAULT_KEY) {
         let [name, ...rest] = part.trim().split('=');
         if (name !== cookieName)
             continue;
-        let value = decodeURIComponent(rest.join('='));
+        let value;
+        try {
+            value = decodeURIComponent(rest.join('='));
+        }
+        catch {
+            // A malformed percent-escape is not a theme the server can honour.
+            return null;
+        }
         if (value === 'light' || value === 'dark')
             return value;
     }
