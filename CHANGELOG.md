@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.1 — 2026-11-08
+- `dark-mode`: `readThemeCookie()` returns `null` when the cookie value cannot be percent-decoded,
+  as documented (`'light'`, `'dark'` or `null`). Before, it threw, so a malformed `theme` cookie
+  failed the server render of any page that reads it (#14).
+
 ## 0.3.0 — 2026-11-02
 - **Remix 3.1.** Peer dependency is now `remix ^3.1.0`, and `@remix-run/ui` is 0.13.0 (it requires
   `@remix-run/component` 1.1, which ships with `remix` 3.1.0). Apps on `remix` 3.0.x must upgrade
