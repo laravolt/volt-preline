@@ -14,12 +14,13 @@ concurrency:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    # The npm environment holds NPM_TOKEN and requires a reviewer's approval
+    # npm trusts only this workflow running in the npm environment (trusted
+    # publishing, no token). The environment requires a reviewer's approval
     # (Settings > Environments > npm), so a tag push alone cannot publish.
     environment: npm
     permissions:
       contents: read
-      id-token: write # npm provenance
+      id-token: write # npm trusted publishing and provenance
     steps:
       - uses: actions/checkout@v7
         with:
@@ -46,7 +47,6 @@ jobs:
       - name: Check tag matches package version
         run: |
           test "v$(node -p "require('./package.json').version")" = "${GITHUB_REF_NAME}"
-      # dist was built and checked above; skip lifecycle scripts while the token is present.
+      # dist was built and checked above; skip lifecycle scripts during publish.
+      # npm 11.5.1+ authenticates with the job's OIDC token; NPM_TOKEN is not used.
       - run: npm publish --provenance --access public --ignore-scripts
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
