@@ -1,6 +1,6 @@
 {
   "name": "volt-preline",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Preline UI (free tier, MIT) components for Remix 3 UI — same component API as volt-catalyst, interactions via @remix-run/ui primitives (no preline.js).",
   "license": "MIT",
   "author": "Laravolt",
@@ -61,7 +61,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@remix-run/ui": "0.13.0",
+    "@remix-run/ui": "0.13.1",
     "preline": "5.0.0"
   },
   "peerDependencies": {
@@ -74,7 +74,7 @@
     "@tailwindcss/cli": "4.3.3",
     "@tailwindcss/forms": "0.5.11",
     "@types/node": "26.6.5",
-    "remix": "3.1.0",
+    "remix": "3.2.0",
     "tailwindcss": "4.3.3",
     "typescript": "7.0.2"
   }

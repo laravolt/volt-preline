@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.3 — 2026-11-08
+- **Remix 3.2.** `@remix-run/ui` is 0.13.1, which requires `@remix-run/component` 1.2 (shipped with
+  `remix` 3.2.0). The peer dependency stays `remix ^3.1.0`: `remix` 3.1.x accepts component 1.2 too,
+  so one copy of the component runtime is installed either way. Upgrading `remix` to 3.2.0 is
+  recommended. The components and `dist/` are unchanged.
+
 ## 0.3.2 — 2026-11-08
 - No change to the package code. This release is published from GitHub Actions with npm trusted
   publishing (OIDC) instead of a long-lived npm token, behind the `npm` environment's required
