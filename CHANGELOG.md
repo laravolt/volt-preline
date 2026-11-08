@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.2 — 2026-11-08
+- No change to the package code. This release is published from GitHub Actions with npm trusted
+  publishing (OIDC) instead of a long-lived npm token, behind the `npm` environment's required
+  reviewer. Provenance is attached as before.
+
 ## 0.3.1 — 2026-11-08
 - `dark-mode`: `readThemeCookie()` returns `null` when the cookie value cannot be percent-decoded,
   as documented (`'light'`, `'dark'` or `null`). Before, it threw, so a malformed `theme` cookie
